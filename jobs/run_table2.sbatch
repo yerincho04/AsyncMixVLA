@@ -104,7 +104,7 @@ ready "$OP" "$OFT_PORT" "${LOGPRE}_oft.log"
 cd "$OFT_REPO"
 export PYTHONPATH="$OFT_REPO/LIBERO:${PYTHONPATH:-}"
 export LIBERO_CONFIG_PATH="$WORKDIR/libero-config-oft"
-"$OFT_PYTHON" run_final_switching_tables_corrected.py \
+"$OFT_PYTHON" run_table2.py \
   --task_id "$TASK_ID" --trigger "$TRIGGER" --methods "$METHODS" \
   --manifest "$MANIFEST" --oracle_manifest "$ORACLE_MANIFEST" \
   --out_dir "$OUT/traces" --mark "$MARK" --takeover_k "$TAKEOVER_K" \

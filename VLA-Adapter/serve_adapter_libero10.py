@@ -11,7 +11,7 @@ from fastapi import FastAPI, Request, Response
 
 m.patch()
 
-from experiments.robot.libero.run_libero_eval import GenerateConfig, check_unnorm_key
+from policy_config import GenerateConfig, check_unnorm_key
 from experiments.robot.openvla_utils import (
     DEVICE,
     get_action_head,
@@ -77,48 +77,6 @@ def make_cfg(args):
     return cfg
 
 
-@app.post("/features")
-async def features(request: Request):
-    """READ-ONLY diagnostic endpoint, additive -- mirrors serve_oft_libero10.py's
-    /features exactly (same _process_vision_features sub-call, unmodified),
-    does not alter /act's behavior. For the cross-policy visual handoff
-    diagnostic only, never called from the live AsyncMixVLA runtime."""
-    raw = await request.body()
-    payload: Dict[str, Any] = msgpack.unpackb(raw, object_hook=m.decode, raw=False)
-
-    cfg = POLICY["cfg"]
-    resize_size = POLICY["resize_size"]
-    obs = {
-        "full_image": resize_image_for_policy(payload["full_image"], resize_size),
-        "wrist_image": resize_image_for_policy(payload["wrist_image"], resize_size),
-    }
-    task_description = payload["task_description"]
-
-    with torch.inference_mode():
-        all_images = [obs["full_image"], obs["wrist_image"]]
-        all_images = prepare_images_for_vla(all_images, cfg)
-        primary_image = all_images.pop(0)
-        prompt = f"In: What action should the robot take to {task_description.lower()}?\nOut:"
-        processor = POLICY["processor"]
-        inputs = processor(prompt, primary_image).to(DEVICE, dtype=torch.bfloat16)
-        if all_images:
-            all_wrist_inputs = [processor(prompt, img).to(DEVICE, dtype=torch.bfloat16) for img in all_images]
-            primary_pixel_values = inputs["pixel_values"]
-            all_wrist_pixel_values = [w["pixel_values"] for w in all_wrist_inputs]
-            inputs["pixel_values"] = torch.cat([primary_pixel_values] + all_wrist_pixel_values, dim=1)
-
-        model = POLICY["model"]
-        input_ids = inputs["input_ids"]
-        if not torch.all(input_ids[:, -1] == 29871):
-            input_ids = torch.cat(
-                (input_ids, torch.unsqueeze(torch.tensor([29871]).long(), dim=0).to(input_ids.device)), dim=1
-            )
-        input_embeddings = model.get_input_embeddings()(input_ids)
-        projected_patch_embeddings = model._process_vision_features(inputs["pixel_values"], input_embeddings, use_film=False)
-        pooled = projected_patch_embeddings.mean(dim=1).float().cpu().numpy()[0]
-
-    packed = msgpack.packb({"pooled_features": pooled.astype(np.float32)}, default=m.encode, use_bin_type=True)
-    return Response(content=packed, media_type="application/msgpack")
 
 
 @app.post("/act")
@@ -141,7 +99,7 @@ async def act(request: Request):
     if state.shape[-1] != PROPRIO_DIM:
         raise ValueError(f"Expected proprio state shape [{PROPRIO_DIM}], got {state.shape}")
 
-    # Match direct run_libero_eval.py preprocessing:
+    # Match the evaluated Adapter preprocessing:
     # client sends raw LIBERO images; server resizes them before get_action(...).
     obs = {
         "full_image": resize_image_for_policy(payload["full_image"], resize_size),

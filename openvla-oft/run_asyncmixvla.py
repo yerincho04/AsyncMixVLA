@@ -30,10 +30,10 @@ from pathlib import Path
 
 from experiments.robot.libero.env_perturbations import get_control_dt
 from experiments.robot.libero.libero_utils import get_libero_dummy_action
-from measure_async_handoff_latency import warm_up
+from asyncmixvla.runtime_io import warm_up
 from asyncmixvla.runtime_support import continue_with_oft_until_done, make_displacement_stepper
-from run_mixed_libero10 import get_source_initial_z_map, schedule_from_manifest_event
-from run_test0_switch_timing import (
+from asyncmixvla.perturbation import get_source_initial_z_map, schedule_from_manifest_event
+from asyncmixvla.runtime_io import (
     CHUNK_SIZE, MAX_STEPS, NUM_STEPS_WAIT, call_policy, get_env_and_task, prepare_observation, process_action,
 )
 
@@ -83,11 +83,6 @@ def build_trigger(args, env=None, manifest_event=None):
         return FrozenTrigger(ForcedStepTrigger(args.forced_trigger_step))
     if args.trigger == "oracle_onset":
         return FrozenTrigger(OracleOnsetTrigger(args.oracle_manifest, args.task_id, args.trial_id, args.condition))
-    if args.trigger == "observable_cascade":
-        if not getattr(args, "observable_cascade_checkpoint", None):
-            raise ValueError("--trigger observable_cascade requires --observable_cascade_checkpoint")
-        from observable_cascade_v1.trigger import ObservableCascadeTrigger
-        return FrozenTrigger(ObservableCascadeTrigger(args.observable_cascade_checkpoint))
     if args.trigger == "observable_cascade_continuous":
         # Re-arming variant: V1 offers a fresh candidate after each decline instead
         # of latching after its first (only) candidate. Reuses the fitted V2 model
@@ -96,21 +91,6 @@ def build_trigger(args, env=None, manifest_event=None):
             raise ValueError("--trigger observable_cascade_continuous requires --observable_cascade_checkpoint")
         from observable_cascade_v1.continuous_trigger import ContinuousObservableCascadeTrigger
         return FrozenTrigger(ContinuousObservableCascadeTrigger(args.observable_cascade_checkpoint))
-    if args.trigger == "visual_gate":
-        # Non-privileged camera gate. Same observation boundary as "deployable":
-        # no env, no task id, no manifest -- only the prepared camera/proprio dict.
-        if not getattr(args, "visual_gate_checkpoint", None):
-            raise ValueError("--trigger visual_gate requires --visual_gate_checkpoint")
-        from visual_trigger_v1.trigger import VisualGateTrigger
-        return FrozenTrigger(VisualGateTrigger(args.visual_gate_checkpoint))
-    if args.trigger == "deployable":
-        # The deployable detector receives its checkpoint only. In particular,
-        # do not pass the simulator, task ID, or perturbation manifest into its
-        # constructor; its observation boundary filters decision inputs.
-        if not getattr(args, "deployable_checkpoint", None):
-            raise ValueError("--trigger deployable requires --deployable_checkpoint")
-        from deployable_trigger_v1.trigger import DeployableTrigger
-        return FrozenTrigger(DeployableTrigger(args.deployable_checkpoint))
     raise ValueError(f"unknown trigger backend: {args.trigger}")
 
 
@@ -240,7 +220,7 @@ def run_episode(args):
                 body_id = env.sim.model.body_name2id(_m[str(args.trial_id)]["event"]["body_name"])
             except Exception:
                 body_id = None
-        from run_mixed_libero10 import LIBERO_10_SOURCE_TARGET as _ST
+        from asyncmixvla.perturbation import LIBERO_10_SOURCE_TARGET as _ST
         _info = _ST.get(args.task_id, {})
         debug_logger = _DebugStepLogger(
             env, body_id,
@@ -248,9 +228,7 @@ def run_episode(args):
         debug_logger.install()
 
     if args.warmup > 0:
-        # Every timing-sensitive script in this project warms up both model
-        # servers before the real timed run (measure_async_handoff_latency.py,
-        # test2_async_bridge_length.py, run_seamless_handoff.py, ...) -- the
+        # Warm up both model servers before the real timed run. The
         # first-ever inference call to a freshly-started server pays a real
         # CUDA/JIT cold-start cost that has nothing to do with steady-state
         # async latency. Skipping this here caused Smoke B's first run to
@@ -267,16 +245,7 @@ def run_episode(args):
         obs, _, done, _ = env.step(get_libero_dummy_action("openvla"))
 
     displacement_hook, diagnostics, obs_holder, manifest_event = (None, None, None, None)
-    zeroshot_family = getattr(args, "zeroshot_family", None)
-    if zeroshot_family:
-        # Novel perturbation family (rotation / target displacement / post-grasp
-        # slip). Only the disturbance changes -- trigger, bridge and handoff run
-        # exactly as frozen. manifest_event stays None on purpose (see
-        # setup_zeroshot_perturbation docstring).
-        from asyncmixvla.zeroshot_perturbation import setup_zeroshot_perturbation
-        displacement_hook, diagnostics, obs_holder, manifest_event = setup_zeroshot_perturbation(
-            args.zeroshot_manifest_path, args.trial_id, env, obs)
-    elif args.condition == "perturbed":
+    if args.condition == "perturbed":
         displacement_hook, diagnostics, obs_holder, manifest_event = setup_perturbation(
             args.task_id, args.trial_id, args.condition, args.manifest_path, env, obs)
 
@@ -284,7 +253,7 @@ def run_episode(args):
         # Recording starts only after both initialization waits. Its step 0
         # observation is the input to the first real policy action, never an
         # idle/warm-up state. Privileged diagnostics below are labels only.
-        from run_mixed_libero10 import get_body_position
+        from experiments.robot.libero.env_perturbations import get_body_position
         from copy import deepcopy as recording_copy
         recording_body = diagnostics.get("body_name") if diagnostics is not None else None
         recorder.start(task_description)
@@ -321,7 +290,6 @@ def run_episode(args):
 
     mechanism = MECHANISM_FOR_MODE.get(args.mode)  # None for adapter_only
 
-    async_stats = None
     if args.mode == "oft_only":
         # Full OFT baseline: OFT drives from step 0. The perturbation hook is
         # applied every step so novel families animate identically to the other
@@ -341,22 +309,6 @@ def run_episode(args):
                     break
         state = "DONE"
 
-    if args.mode == "oft_async_continuous":
-        # OFT asynchronous at EVERY chunk boundary with a step-based delay -- the
-        # regime VLASH targets (see asyncmixvla/continuous_async.py). No Adapter,
-        # no trigger; state/vision alignment select Naive, VLASH or Ours.
-        if getattr(args, "async_delay", None) is None:
-            raise ValueError("--mode oft_async_continuous requires --async_delay")
-        from asyncmixvla.continuous_async import run_oft_continuous_async
-        res = run_oft_continuous_async(
-            env, task_description, obs, delay=int(args.async_delay),
-            state_alignment=args.state_alignment, vision_alignment=args.vision_alignment,
-            pre_step_hook=pre_step_hook, max_steps=args.max_steps, start_step=episode_step)
-        oft_steps += res["final_step"] - episode_step
-        done, episode_step, obs = res["done"], res["final_step"], res["obs"]
-        async_stats = res["stats"]
-        state = "DONE"
-
     while not done and episode_step < args.max_steps and state == "ADAPTER":
         observation = prepare_observation(obs)
         adapter_actions, _ = call_policy("adapter", observation, task_description)
@@ -369,7 +321,7 @@ def run_episode(args):
                 break
             fired_here = False
             if args.trigger != "never" and mechanism is not None:
-                if args.trigger in ("deployable", "visual_gate", "observable_cascade", "observable_cascade_continuous"):
+                if args.trigger == "observable_cascade_continuous":
                     # Structural boundary: pass only camera/proprio inputs and
                     # causal policy/control history, never the raw simulator
                     # observation dictionary, environment or task metadata.
@@ -558,9 +510,6 @@ def run_episode(args):
         "takeover_k": int(getattr(args, "takeover_k", 1) or 1),
         "n_prefetch_executed": n_prefetch_executed if state_reached_oft else 0,
         "perturbation_diagnostics": diagnostics,
-        "zeroshot_family": zeroshot_family,
-        "async_delay": getattr(args, "async_delay", None),
-        "async_stats": async_stats,
     }
     return trace
 
@@ -572,14 +521,7 @@ def main():
     parser.add_argument("--condition", required=True, choices=["clean", "perturbed"])
     parser.add_argument("--mode", required=True,
                          choices=["adapter_only", "oft_only", "sync_full_oft", "naive_async_full_oft",
-                                  "vlash_async_full_oft", "oft_async_continuous"])
-    parser.add_argument("--async_delay", type=int, default=None,
-                         help="oft_async_continuous only: actions executed between capturing the "
-                              "observation and the new OFT chunk arriving (0 = synchronous).")
-    parser.add_argument("--zeroshot_family", default=None,
-                         help="If set, apply a novel zero-shot perturbation family from --zeroshot_manifest_path "
-                              "instead of the frozen translation perturbation. The AsyncMixVLA pipeline is unchanged.")
-    parser.add_argument("--zeroshot_manifest_path", default=None)
+                                  "vlash_async_full_oft"])
     parser.add_argument("--trigger_persistence_k", type=int, default=1,
                          help="learned_continuous: fire after this many CONSECUTIVE steps at/above threshold.")
     parser.add_argument("--trigger_no_stage_a_gate", action="store_true",
@@ -594,15 +536,10 @@ def main():
                          help="How many actions of the already-prefetched OFT chunk to execute after the bridge "
                               "before returning to fresh-observation replanning. k=1 is the frozen behavior.")
     parser.add_argument("--trigger", default="oracle_onset",
-                         choices=["never", "oracle_onset", "forced_step", "deployable",
-                                  "visual_gate", "observable_cascade", "observable_cascade_continuous"],
-                         help="Deployable observable triggers plus oracle/forced-step debug baselines.")
+                         choices=["never", "oracle_onset", "forced_step", "observable_cascade_continuous"],
+                         help="Deployed observable trigger plus oracle/forced-step baselines.")
     parser.add_argument("--observable_cascade_checkpoint", default=None,
                          help="Observable V1/V2 artifact. Use corrected observable_cascade_v1 runtime for evaluation.")
-    parser.add_argument("--visual_gate_checkpoint", default=None,
-                         help="Required for --trigger visual_gate: calibrated camera-gate artifact JSON.")
-    parser.add_argument("--deployable_checkpoint", default=None,
-                         help="Required for --trigger deployable: calibrated camera/proprio/action-history detector.")
     parser.add_argument("--forced_trigger_step", type=int, default=None,
                          help="Required with --trigger forced_step: hand off the first time episode_step >= this. "
                               "Used by the handoff-only live DEV benchmark so every method switches at the same step.")
@@ -617,22 +554,14 @@ def main():
     parser.add_argument("--debug_trace_out", default=None,
                          help="TEMPORARY debug instrumentation: if set, dumps a per-step action/state trace "
                               "(see debug_trace_compare.py) to this path. No effect on default behavior.")
-    parser.add_argument("--state_alignment", default="vlash_additive",
-                         choices=["stale", "vlash_additive", "vlash_gain_corrected"],
+    parser.add_argument("--state_alignment", default="vlash_gain_corrected",
+                         choices=["stale", "vlash_gain_corrected"],
                          help="Proprio alignment mode for mechanism=vlash_async (see asyncmixvla/state_alignment.py). "
-                              "Default 'vlash_additive' reproduces the already-validated AsyncMixVLA path unchanged. "
+                              "The deployed method uses the calibrated controller-aware prediction. "
                               "Ignored for naive_async/sync mechanisms.")
     parser.add_argument("--vision_alignment", default="stale",
-                         choices=["stale", "oracle_future", "oracle_context", "f2f_ap", "action_consistency"],
-                         help="Vision alignment mode for run_async_bridge (see asyncmixvla/vision_alignment.py). "
-                              "Default 'stale' reproduces the already-validated AsyncMixVLA path unchanged. "
-                              "'f2f_ap' requires the OFT server to have been started with --f2f_ap_checkpoint. "
-                              "'action_consistency' is the frozen gate-passed AsyncMixVLA visual-handoff method "
-                              "(job 2168888) and requires the OFT server started with "
-                              "--action_consistency_checkpoint. "
-                              "'oracle_future' is acausal/comparison-only (see vision_alignment.py) and disables "
-                              "async overlap for that call (bridge runs to completion before OFT is queried) -- "
-                              "never a real-deployment option, an upper-bound reference only.")
+                         choices=["stale", "action_consistency"],
+                         help="Use the trigger-time image directly or apply the deployed causal visual residual.")
     parser.add_argument("--out", required=True)
     args = parser.parse_args()
 

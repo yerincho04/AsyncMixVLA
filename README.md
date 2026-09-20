@@ -20,11 +20,10 @@ See [`results/table2_learned_k4_jointv2`](results/table2_learned_k4_jointv2) for
 
 ## Repository layout
 
-- `openvla-oft/asyncmixvla`: asynchronous bridge and state/vision alignment.
-- `openvla-oft/visual_trigger_v1`: deployable visual disturbance detector.
-- `openvla-oft/observable_cascade_v1`: continuous V1+V2 trigger.
-- `openvla-oft/research_recovery_v1`: corrected runtime that continues perturbations through OFT execution.
-- `openvla-oft/*switching*corrected.py`: final evaluation and strict analysis.
+- `openvla-oft/asyncmixvla`: deployed bridge, state/vision alignment, runtime I/O, and perturbation replay.
+- `openvla-oft/visual_trigger_v1/models`: frozen V1 weights and operating point used by the cascade.
+- `openvla-oft/observable_cascade_v1`: deployed continuous V1+V2 trigger.
+- `openvla-oft/run_table2.py` and `analyze_table2.py`: final evaluation and strict analysis.
 - `VLA-Adapter/serve_adapter_libero10.py`: Adapter inference server.
 - `jobs`: portable Slurm launch and analysis scripts.
 - `results/manifests`: frozen and portable evaluation manifests.

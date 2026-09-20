@@ -1,28 +1,65 @@
-"""The frozen, gate-passed AsyncMixVLA visual-handoff residual (2026-09-07,
-job 2168888): a tiny MLP trained with an ACTION-CONSISTENCY objective
-(minimize |OFT(z_pred) - OFT(z_true)| through a fully frozen OFT) rather than
-F2F-AP's latent-L2 reconstruction. On the offline DEV gate it cut first-
-action and chunk action L2 vs stale by ~39% (F2F-AP: ~2%), with gripper
-agreement at OFT's real 0.5 decision boundary equal to stale on the first
-executed action -- see project memory / results/vlash_risk_audit/
-gripper_threshold_check_report.json.
+"""Frozen action-consistency visual residual used by deployed AsyncMixVLA."""
 
-This is NOT F2F-AP and must never be labelled as such. It happens to share
-F2F-AP's exact architecture (single 2-layer MLP, hidden 64) and checkpoint
-FORMAT (produced by convert_C_residual_to_checkpoint.py), so the already-
-verified F2FAP load + predict_future_latent path is reused verbatim -- only
-the trained weights and the training objective differ. Kept as a distinct
-class so logs, config (--vision_alignment action_consistency /
---action_consistency_checkpoint) and reporting never conflate the two, and
-so the F2F-AP code path is provably untouched.
-"""
-from asyncmixvla.f2f_ap import F2FAP
+import numpy as np
+import torch
+import torch.nn as nn
+
+HIDDEN = 64
 
 
-class ActionConsistencyResidual(F2FAP):
-    """Alias of F2FAP: identical load + predict_future_latent(z_now_full,
-    bridge_actions) -> z_now_full + pooled_delta. Only the checkpoint (hence
-    the trained weights and the objective they were trained under) differs.
-    Frozen -- do not retrain or tune."""
+class _ResidualPredictor(nn.Module):
+    def __init__(self, z_dim, bridge_dim, hidden=HIDDEN):
+        super().__init__()
+        self.net = nn.Sequential(
+            nn.Linear(z_dim + bridge_dim, hidden), nn.ReLU(), nn.Linear(hidden, z_dim)
+        )
 
-    pass
+    def forward(self, latent, bridge):
+        return self.net(torch.cat([latent, bridge], dim=-1))
+
+
+def _bridge_features(bridge_actions, max_len=8):
+    actions = np.asarray(bridge_actions, dtype=np.float64)
+    return np.concatenate(
+        [actions.mean(axis=0), actions[0], actions[-1], np.array([len(actions) / max_len])]
+    ).astype(np.float32)
+
+
+class ActionConsistencyResidual:
+    """Load the trained residual and predict OFT's future visual latent."""
+
+    def __init__(self, checkpoint_path, device="cpu"):
+        checkpoint = torch.load(checkpoint_path, map_location=device)
+        self.device = device
+        self.model = _ResidualPredictor(
+            checkpoint["z_dim"], checkpoint["bridge_dim"], checkpoint.get("hidden", HIDDEN)
+        ).to(device)
+        self.model.load_state_dict(checkpoint["state_dict"])
+        self.model.eval()
+        for parameter in self.model.parameters():
+            parameter.requires_grad_(False)
+        self.z_mean, self.z_std = checkpoint["z_mean"], checkpoint["z_std"]
+        self.b_mean, self.b_std = checkpoint["b_mean"], checkpoint["b_std"]
+        self.d_mean, self.d_std = checkpoint["d_mean"], checkpoint["d_std"]
+        self.max_delta_norm_by_bridge = {
+            int(k): float(v) for k, v in checkpoint.get("max_delta_norm_by_bridge", {}).items()
+        }
+
+    def predict_delta(self, pooled_latent, bridge_actions):
+        bridge = _bridge_features(bridge_actions)
+        with torch.no_grad():
+            latent_norm = torch.from_numpy(
+                ((pooled_latent - self.z_mean) / self.z_std)[None]
+            ).float().to(self.device)
+            bridge_norm = torch.from_numpy(((bridge - self.b_mean) / self.b_std)[None]).float().to(self.device)
+            normalized_delta = self.model(latent_norm, bridge_norm)[0].cpu().numpy()
+        delta = normalized_delta * self.d_std + self.d_mean
+        cap = self.max_delta_norm_by_bridge.get(len(bridge_actions))
+        norm = float(np.linalg.norm(delta))
+        if cap is not None and norm > cap:
+            delta = delta * (cap / max(norm, 1e-12))
+        return delta
+
+    def predict_future_latent(self, current_latent, bridge_actions):
+        current = current_latent.astype(np.float32)
+        return current + self.predict_delta(current.mean(axis=0), bridge_actions)[None, :]

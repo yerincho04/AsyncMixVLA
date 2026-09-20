@@ -28,10 +28,9 @@ from pathlib import Path
 import numpy as np
 import torch
 
-from visual_trigger_v1.model import VisualGate
-from deployable_trigger_v1.recording import camera64, observable
-from deployable_trigger_v1.features import ObservableFeatures
-from .trigger import load_artifact, utility_score
+from .model import VisualGate
+from observable_cascade_v1.observable import camera64, observable, ObservableFeatures
+from .scoring import load_artifact, utility_score
 from .features import FEATURE_NAMES
 from artifact_paths import resolve_artifact_path
 

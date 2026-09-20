@@ -1,13 +1,6 @@
 """Modular proprioception-conditioning for the async OFT request.
 
-Mirrors vision_alignment.py's separation of concerns and its "do not
-overwrite the validated path" discipline: mode="vlash_additive" reproduces
-run_seamless_handoff.roll_forward_proprio's naive prediction EXACTLY
-unmodified (this is the already-validated AsyncMixVLA path -- every
-existing caller keeps this as the default, byte-for-byte unchanged
-behavior). mode="vlash_gain_corrected" is a NEW, separate option: the
-controller-aware handoff track (audit_osc_controller_dynamics.py,
-evaluate_controller_aware_predictors.py) found roll_forward_proprio
+The controller-aware calibration found that uncorrected roll-forward
 systematically overshoots by a controller-physics-explained, empirically
 constant ~4x factor (OSC_POSE is a PD/impedance controller whose goal
 resets every step -- it never fully converges within one policy action),
@@ -25,7 +18,7 @@ import os
 
 import numpy as np
 
-from run_seamless_handoff import roll_forward_proprio
+from asyncmixvla.state_prediction import roll_forward_proprio
 
 DEFAULT_CALIBRATION_PATH = os.environ.get(
     "VLASH_GAIN_CALIBRATION",
@@ -51,8 +44,7 @@ def align_state(mode, *, current_obs, bridge_actions, env, open_bounds, closed_b
     mode="stale": current_obs's own state, unchanged -- no roll-forward at
       all (the Naive Async baseline's proprio).
     mode="vlash_additive": roll_forward_proprio's naive prediction, called
-      exactly as before -- the currently validated AsyncMixVLA default.
-      Unmodified; this is a passthrough, not a reimplementation.
+      without gain correction.
     mode="vlash_gain_corrected": vlash_additive's prediction blended toward
       the current state via TRAIN-derived calibrated gains (see module
       docstring / calibration artifact). Position and orientation use their

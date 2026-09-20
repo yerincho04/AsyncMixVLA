@@ -19,7 +19,7 @@ case "$TRIGGER" in
 esac
 
 cd "$ROOT/openvla-oft"
-"$OFT_PYTHON" analyze_final_switching_corrected.py \
+"$OFT_PYTHON" analyze_table2.py \
   --trigger "$TRIGGER" --root "$WORKDIR/$RUN_NAME" \
   --manifest "$ROOT/results/manifests/final_test/test_episode_manifest_portable.json" \
   --mark "$MARK" --split TEST_K4_JOINTV2 --require_complete

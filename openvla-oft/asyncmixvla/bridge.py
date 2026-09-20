@@ -1,17 +1,8 @@
-"""Async Adapter->OFT bridge and handoff, driven by a real trigger decision
-made during a live episode (not a pre-known evaluation-time bypass).
+"""Deployed asynchronous Adapter-to-OFT bridge and handoff.
 
-Reuses, unmodified:
-  - roll_forward_proprio / gripper_open_closed_bounds (run_seamless_handoff.py)
-    for VLASH-style future-proprioception prediction. Controller math is
-    never rewritten here.
-  - The ThreadPoolExecutor overlap pattern and B/C_async/S/L_handoff/
-    zero_stall/missed_control_ticks formulation validated in
-    test2_async_bridge_length.py's run_bridge_and_handoff and
-    run_matched_evaluation_vlash.py's run_bridge_and_handoff_vlash. This
-    module is a live-trigger-driven sibling of those, not a replacement --
-    Table 2B's own files are never imported for execution here, only the
-    primitives (roll_forward_proprio) both share.
+The bridge rolls proprioception forward, optionally applies the causal
+action-consistency visual residual, and overlaps the OFT request with the
+remaining committed Adapter actions.
 
 Locked definitions (spec section 8, do not change):
   T_predict = perf_counter() the instant the trigger fires (before any
@@ -38,12 +29,11 @@ from concurrent.futures import ThreadPoolExecutor
 import numpy as np
 
 from experiments.robot.libero.env_perturbations import get_control_dt
-from run_seamless_handoff import gripper_open_closed_bounds
-from run_test0_switch_timing import (
+from asyncmixvla.state_prediction import gripper_open_closed_bounds
+from asyncmixvla.runtime_io import (
     CHUNK_SIZE,
     call_policy,
     call_policy_action_consistency,
-    call_policy_f2f_ap,
     prepare_observation,
     process_action,
 )
@@ -53,33 +43,14 @@ from asyncmixvla.vision_alignment import align_observation
 
 def oft_query_pipeline(raw_observation, task_description, origin, future_state=None,
                         vision_alignment="stale", bridge_actions_raw=None, future_obs=None):
-    """Runs on the background thread (except when vision_alignment=
-    "oracle_future", where the caller runs this synchronously after the
-    bridge completes -- see run_async_bridge). Includes the vision-alignment
-    prep (and, for VLASH, the caller has already computed future_state via
-    roll_forward_proprio *before* this was submitted -- see run_bridge()
-    below -- so its cost is charged to the time between T_predict and
-    submission, i.e. counted inside C_async, per spec section 6).
-
-    vision_alignment in {"stale", "oracle_future", "f2f_ap",
-    "action_consistency"} -- see
-    asyncmixvla/vision_alignment.py. Defaults to "stale", the already-
-    validated path, so every existing caller's behavior is byte-for-byte
-    unchanged unless it opts into a different mode. "f2f_ap" routes through
-    call_policy_f2f_ap (needs bridge_actions_raw); its own inference cost is
-    included in oft_http_latency_s / C_async, same accounting as a normal
-    /act call, per the F2F-AP track's "include its inference time in the
-    async compute budget" requirement."""
+    """Prepare the causal handoff context and query OFT on the background thread."""
     t_start = time.perf_counter()
     observation = align_observation(vision_alignment, stale_obs=raw_observation,
                                      prepare_observation_fn=prepare_observation,
                                      future_state=future_state, future_obs=future_obs)
     t_prep_end = time.perf_counter()
-    use_f2f_ap = observation.pop("use_f2f_ap", False)
     use_action_consistency = observation.pop("use_action_consistency", False)
-    if use_f2f_ap:
-        actions, http_latency = call_policy_f2f_ap(observation, task_description, bridge_actions_raw)
-    elif use_action_consistency:
+    if use_action_consistency:
         actions, http_latency = call_policy_action_consistency(observation, task_description, bridge_actions_raw)
     else:
         actions, http_latency = call_policy("oft", observation, task_description)
@@ -98,7 +69,7 @@ def oft_query_pipeline(raw_observation, task_description, origin, future_state=N
 
 def run_async_bridge(env, task_description, obs, bridge_actions_raw, origin, mechanism,
                       action_number_offset, open_bounds=None, closed_bounds=None, pre_step_hook=None,
-                      state_alignment="vlash_additive", vision_alignment="stale",
+                      state_alignment="vlash_gain_corrected", vision_alignment="stale",
                       adaptive_bridge=False, adaptive_max_extra_chunks=3):
     """mechanism in {"naive_async", "vlash_async"}. bridge_actions_raw: the
     EXACT already-generated Adapter actions from the current chunk that had
@@ -107,24 +78,8 @@ def run_async_bridge(env, task_description, obs, bridge_actions_raw, origin, mec
     asynchronously at T_predict=now, executes bridge_actions_raw for real
     while it computes, hands off at T_switch.
 
-    state_alignment (only meaningful when mechanism="vlash_async"): one of
-    {"stale", "vlash_additive", "vlash_gain_corrected"} -- see
-    asyncmixvla/state_alignment.py. Defaults to "vlash_additive", the
-    already-validated AsyncMixVLA path, so every existing caller's behavior
-    is byte-for-byte unchanged unless it opts into a different mode.
-
-    vision_alignment: one of {"stale", "oracle_future", "f2f_ap",
-    "action_consistency"} -- see
-    asyncmixvla/vision_alignment.py. Defaults to "stale", so every existing
-    caller's behavior is byte-for-byte unchanged unless it opts in.
-    "oracle_future" is acausal (the true post-bridge image doesn't exist
-    until the bridge finishes) and is special-cased below: the bridge runs
-    to completion FIRST, then OFT is queried with the real post-bridge
-    observation -- there is no async overlap for this mode by construction,
-    which is expected (it exists only as an upper-bound reference, never a
-    real-deployment option). "stale", "f2f_ap" and "action_consistency" keep
-    the exact original async-overlap structure (OFT queried at T_predict,
-    before the bridge steps)."""
+    The deployed method uses ``vlash_gain_corrected`` state alignment and
+    ``action_consistency`` vision alignment. Baseline calls use ``stale``."""
     if mechanism not in ("naive_async", "vlash_async"):
         raise ValueError(f"run_async_bridge: unsupported mechanism {mechanism!r}")
     if len(bridge_actions_raw) == 0:
@@ -149,18 +104,13 @@ def run_async_bridge(env, task_description, obs, bridge_actions_raw, origin, mec
         )
 
     action_timeline = []
-    # Defined for BOTH paths: the oracle_future/oracle_context branch is
-    # forced-synchronous and never reaches the adaptive extension below,
-    # but the shared return dict reports these counters.
     n_extra_chunks = 0
     extra_bridge_actions = 0
 
-    if vision_alignment in ("oracle_future", "oracle_context"):
-        # Acausal debug/comparison mode -- see docstring above. Kept as a
-        # separate branch (duplicating the stepping loop) rather than
-        # unifying with the async branch below, to avoid any risk of
-        # altering the locked timing definitions (spec section 8) for the
-        # "stale"/"f2f_ap"/"action_consistency" modes that DO use the real async-overlap path.
+    with ThreadPoolExecutor(max_workers=1) as executor:
+        future = executor.submit(oft_query_pipeline, raw_observation, task_description, origin,
+                                  future_state, vision_alignment, bridge_actions_raw)
+
         t_switch = None
         for offset, raw_action in enumerate(bridge_actions_raw):
             action = process_action(raw_action)
@@ -174,78 +124,53 @@ def run_async_bridge(env, task_description, obs, bridge_actions_raw, origin, mec
                                      "end_s": t_end - origin, "phase": "bridge",
                                      "raw_action": np.asarray(raw_action, dtype=np.float64).tolist()})
             if offset == len(bridge_actions_raw) - 1:
-                t_switch = t_end
+                t_switch = t_end  # locked boundary: last committed bridge action's completion
             if done:
                 return {"valid": False, "reason": "adapter_succeeded_during_bridge",
                         "action_timeline": action_timeline, "obs": obs, "done": True}
-        oft = oft_query_pipeline(raw_observation, task_description, origin, future_state,
-                                  vision_alignment=vision_alignment, bridge_actions_raw=bridge_actions_raw,
-                                  future_obs=obs)
-    else:
-        with ThreadPoolExecutor(max_workers=1) as executor:
-            future = executor.submit(oft_query_pipeline, raw_observation, task_description, origin,
-                                      future_state, vision_alignment, bridge_actions_raw)
 
-            t_switch = None
-            for offset, raw_action in enumerate(bridge_actions_raw):
-                action = process_action(raw_action)
-                episode_step = action_number_offset + offset
-                if pre_step_hook is not None:
-                    pre_step_hook(episode_step, obs)
-                t_start = time.perf_counter()
-                obs, _, done, _ = env.step(action.tolist())
-                t_end = time.perf_counter()
-                action_timeline.append({"episode_step": episode_step, "start_s": t_start - origin,
-                                         "end_s": t_end - origin, "phase": "bridge",
-                                         "raw_action": np.asarray(raw_action, dtype=np.float64).tolist()})
-                if offset == len(bridge_actions_raw) - 1:
-                    t_switch = t_end  # locked boundary: last committed bridge action's completion
-                if done:
-                    return {"valid": False, "reason": "adapter_succeeded_during_bridge",
-                            "action_timeline": action_timeline, "obs": obs, "done": True}
-
-            # --- adaptive bridge extension -------------------------------------
-            # The default bridge is whatever remained of the Adapter's CURRENT
-            # chunk when the trigger fired, i.e. 8 - chunk_position actions. That
-            # budget B is an accident of chunk phase, not a function of how long
-            # OFT actually needs: measured over 110 real switches, bridge length 1
-            # gives B~105ms against C_async~231ms and stalls 92% of the time,
-            # while length >=4 essentially never stalls. When enabled, this keeps
-            # the Adapter driving (fetching further chunks) until OFT is actually
-            # ready, so the robot never holds. The Adapter costs ~57ms / 48 GFLOPs
-            # per chunk, negligible next to the 7.5B incoming policy.
-            #
-            # Opt-in (adaptive_bridge=False by default) so every previously
-            # recorded result stays bit-reproducible. Note the state/vision
-            # alignment for this handoff was computed at T_predict against the
-            # ORIGINAL bridge_actions_raw; extending the bridge makes the real
-            # T_switch later than that prediction assumed. Harmless for
-            # stale/stale, a documented approximation for the predicted modes.
-            if adaptive_bridge:
-                while (not future.done()) and n_extra_chunks < adaptive_max_extra_chunks:
-                    extra_chunk, _ = call_policy("adapter", prepare_observation(obs), task_description)
-                    n_extra_chunks += 1
-                    for raw_action in extra_chunk[:CHUNK_SIZE]:
-                        if future.done():
-                            break
-                        action = process_action(raw_action)
-                        episode_step = action_number_offset + len(action_timeline)
-                        if pre_step_hook is not None:
-                            pre_step_hook(episode_step, obs)
-                        t_start = time.perf_counter()
-                        obs, _, done, _ = env.step(action.tolist())
-                        t_end = time.perf_counter()
-                        action_timeline.append({"episode_step": episode_step, "start_s": t_start - origin,
-                                                 "end_s": t_end - origin, "phase": "bridge_extended",
-                                                 "raw_action": np.asarray(raw_action, dtype=np.float64).tolist()})
-                        t_switch = t_end   # locked boundary moves with the real last committed action
-                        extra_bridge_actions += 1
-                        if done:
-                            return {"valid": False, "reason": "adapter_succeeded_during_bridge",
-                                    "action_timeline": action_timeline, "obs": obs, "done": True}
-                    if done:
+        # --- adaptive bridge extension -------------------------------------
+        # The default bridge is whatever remained of the Adapter's CURRENT
+        # chunk when the trigger fired, i.e. 8 - chunk_position actions. That
+        # budget B is an accident of chunk phase, not a function of how long
+        # OFT actually needs: measured over 110 real switches, bridge length 1
+        # gives B~105ms against C_async~231ms and stalls 92% of the time,
+        # while length >=4 essentially never stalls. When enabled, this keeps
+        # the Adapter driving (fetching further chunks) until OFT is actually
+        # ready, so the robot never holds. The Adapter costs ~57ms / 48 GFLOPs
+        # per chunk, negligible next to the 7.5B incoming policy.
+        #
+        # Opt-in (adaptive_bridge=False by default) so every previously
+        # recorded result stays bit-reproducible. Note the state/vision
+        # alignment for this handoff was computed at T_predict against the
+        # ORIGINAL bridge_actions_raw; extending the bridge makes the real
+        # T_switch later than that prediction assumed. Harmless for
+        # stale/stale, a documented approximation for the predicted modes.
+        if adaptive_bridge:
+            while (not future.done()) and n_extra_chunks < adaptive_max_extra_chunks:
+                extra_chunk, _ = call_policy("adapter", prepare_observation(obs), task_description)
+                n_extra_chunks += 1
+                for raw_action in extra_chunk[:CHUNK_SIZE]:
+                    if future.done():
                         break
-            oft = future.result()
+                    action = process_action(raw_action)
+                    episode_step = action_number_offset + len(action_timeline)
+                    if pre_step_hook is not None:
+                        pre_step_hook(episode_step, obs)
+                    t_start = time.perf_counter()
+                    obs, _, done, _ = env.step(action.tolist())
+                    t_end = time.perf_counter()
+                    action_timeline.append({"episode_step": episode_step, "start_s": t_start - origin,
+                                             "end_s": t_end - origin, "phase": "bridge_extended",
+                                             "raw_action": np.asarray(raw_action, dtype=np.float64).tolist()})
+                    t_switch = t_end   # locked boundary moves with the real last committed action
+                    extra_bridge_actions += 1
+                    if done:
+                        return {"valid": False, "reason": "adapter_succeeded_during_bridge",
+                                "action_timeline": action_timeline, "obs": obs, "done": True}
+                if done:
+                    break
+        oft = future.result()
 
     t_ready = oft["T_ready_abs"]
     first_oft_action = oft.pop("first_oft_action")
