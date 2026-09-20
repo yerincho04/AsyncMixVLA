@@ -1,0 +1,65 @@
+{
+  "summary": {
+    "0": {
+      "n_trials": 12,
+      "n_feasible": 12,
+      "infeasible_trials": []
+    },
+    "1": {
+      "n_trials": 12,
+      "n_feasible": 12,
+      "infeasible_trials": []
+    },
+    "2": {
+      "n_trials": 12,
+      "n_feasible": 11,
+      "infeasible_trials": [
+        "5"
+      ]
+    },
+    "3": {
+      "n_trials": 12,
+      "n_feasible": 12,
+      "infeasible_trials": []
+    },
+    "4": {
+      "n_trials": 12,
+      "n_feasible": 12,
+      "infeasible_trials": []
+    },
+    "5": {
+      "n_trials": 12,
+      "n_feasible": 12,
+      "infeasible_trials": []
+    },
+    "6": {
+      "n_trials": 12,
+      "n_feasible": 12,
+      "infeasible_trials": []
+    },
+    "7": {
+      "n_trials": 12,
+      "n_feasible": 12,
+      "infeasible_trials": []
+    },
+    "8": {
+      "n_trials": 12,
+      "n_feasible": 11,
+      "infeasible_trials": [
+        "0"
+      ]
+    },
+    "9": {
+      "n_trials": 12,
+      "n_feasible": 12,
+      "infeasible_trials": []
+    }
+  },
+  "total_feasible": 118,
+  "total": 120,
+  "generator_version": "full10_manifest_v1_new_2026-08-25",
+  "global_seed": 20260825,
+  "magnitude": 0.05,
+  "duration": 5,
+  "frozen": true
+}

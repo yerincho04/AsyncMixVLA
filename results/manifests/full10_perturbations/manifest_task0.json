@@ -1,0 +1,458 @@
+{
+  "0": {
+    "generator_version": "full10_manifest_v1_new_2026-08-25",
+    "global_seed": 20260825,
+    "task_id": 0,
+    "trial_id": 0,
+    "magnitude": 0.05,
+    "duration": 5,
+    "feasible": true,
+    "feasibility_window_start": 0,
+    "feasibility_window_end": 169,
+    "adapter_window_used": [
+      0,
+      169
+    ],
+    "oft_window_used": [
+      0,
+      299
+    ],
+    "trial_seed": 20260825,
+    "chosen_trigger_step": 3,
+    "perturbed_body": "tomato_sauce_1_main",
+    "direction_angle_rad": 2.9293354732030688,
+    "delta_xy": [
+      -0.04887789460302489,
+      0.010533347956637061
+    ],
+    "event": {
+      "group": "source",
+      "body_name": "tomato_sauce_1_main",
+      "trigger_step": 3,
+      "delta_xy": [
+        -0.04887789460302489,
+        0.010533347956637061
+      ],
+      "magnitude": 0.05,
+      "duration": 5
+    }
+  },
+  "1": {
+    "generator_version": "full10_manifest_v1_new_2026-08-25",
+    "global_seed": 20260825,
+    "task_id": 0,
+    "trial_id": 1,
+    "magnitude": 0.05,
+    "duration": 5,
+    "feasible": true,
+    "feasibility_window_start": 0,
+    "feasibility_window_end": 196,
+    "adapter_window_used": [
+      0,
+      334
+    ],
+    "oft_window_used": [
+      0,
+      196
+    ],
+    "trial_seed": 20261825,
+    "chosen_trigger_step": 87,
+    "perturbed_body": "tomato_sauce_1_main",
+    "direction_angle_rad": 4.691221260718912,
+    "delta_xy": [
+      -0.0010583069461428162,
+      -0.04998879860936594
+    ],
+    "event": {
+      "group": "source",
+      "body_name": "tomato_sauce_1_main",
+      "trigger_step": 87,
+      "delta_xy": [
+        -0.0010583069461428162,
+        -0.04998879860936594
+      ],
+      "magnitude": 0.05,
+      "duration": 5
+    }
+  },
+  "2": {
+    "generator_version": "full10_manifest_v1_new_2026-08-25",
+    "global_seed": 20260825,
+    "task_id": 0,
+    "trial_id": 2,
+    "magnitude": 0.05,
+    "duration": 5,
+    "feasible": true,
+    "feasibility_window_start": 0,
+    "feasibility_window_end": 166,
+    "adapter_window_used": [
+      0,
+      166
+    ],
+    "oft_window_used": [
+      0,
+      172
+    ],
+    "trial_seed": 20262825,
+    "chosen_trigger_step": 160,
+    "perturbed_body": "tomato_sauce_1_main",
+    "direction_angle_rad": 6.194881739748624,
+    "delta_xy": [
+      0.04980518863596864,
+      -0.0044094427012469775
+    ],
+    "event": {
+      "group": "source",
+      "body_name": "tomato_sauce_1_main",
+      "trigger_step": 160,
+      "delta_xy": [
+        0.04980518863596864,
+        -0.0044094427012469775
+      ],
+      "magnitude": 0.05,
+      "duration": 5
+    }
+  },
+  "3": {
+    "generator_version": "full10_manifest_v1_new_2026-08-25",
+    "global_seed": 20260825,
+    "task_id": 0,
+    "trial_id": 3,
+    "magnitude": 0.05,
+    "duration": 5,
+    "feasible": true,
+    "feasibility_window_start": 0,
+    "feasibility_window_end": 186,
+    "adapter_window_used": [
+      0,
+      217
+    ],
+    "oft_window_used": [
+      0,
+      186
+    ],
+    "trial_seed": 20263825,
+    "chosen_trigger_step": 74,
+    "perturbed_body": "tomato_sauce_1_main",
+    "direction_angle_rad": 0.363202634513358,
+    "delta_xy": [
+      0.04673819101540079,
+      0.017763487850304314
+    ],
+    "event": {
+      "group": "source",
+      "body_name": "tomato_sauce_1_main",
+      "trigger_step": 74,
+      "delta_xy": [
+        0.04673819101540079,
+        0.017763487850304314
+      ],
+      "magnitude": 0.05,
+      "duration": 5
+    }
+  },
+  "4": {
+    "generator_version": "full10_manifest_v1_new_2026-08-25",
+    "global_seed": 20260825,
+    "task_id": 0,
+    "trial_id": 4,
+    "magnitude": 0.05,
+    "duration": 5,
+    "feasible": true,
+    "feasibility_window_start": 0,
+    "feasibility_window_end": 188,
+    "adapter_window_used": [
+      0,
+      241
+    ],
+    "oft_window_used": [
+      0,
+      188
+    ],
+    "trial_seed": 20264825,
+    "chosen_trigger_step": 116,
+    "perturbed_body": "tomato_sauce_1_main",
+    "direction_angle_rad": 2.655806235724257,
+    "delta_xy": [
+      -0.044215402049921824,
+      0.02334519696990731
+    ],
+    "event": {
+      "group": "source",
+      "body_name": "tomato_sauce_1_main",
+      "trigger_step": 116,
+      "delta_xy": [
+        -0.044215402049921824,
+        0.02334519696990731
+      ],
+      "magnitude": 0.05,
+      "duration": 5
+    }
+  },
+  "5": {
+    "generator_version": "full10_manifest_v1_new_2026-08-25",
+    "global_seed": 20260825,
+    "task_id": 0,
+    "trial_id": 5,
+    "magnitude": 0.05,
+    "duration": 5,
+    "feasible": true,
+    "feasibility_window_start": 0,
+    "feasibility_window_end": 189,
+    "adapter_window_used": [
+      0,
+      221
+    ],
+    "oft_window_used": [
+      0,
+      189
+    ],
+    "trial_seed": 20265825,
+    "chosen_trigger_step": 97,
+    "perturbed_body": "tomato_sauce_1_main",
+    "direction_angle_rad": 0.0526246437153127,
+    "delta_xy": [
+      0.04993078214811425,
+      0.002630017885405937
+    ],
+    "event": {
+      "group": "source",
+      "body_name": "tomato_sauce_1_main",
+      "trigger_step": 97,
+      "delta_xy": [
+        0.04993078214811425,
+        0.002630017885405937
+      ],
+      "magnitude": 0.05,
+      "duration": 5
+    }
+  },
+  "6": {
+    "generator_version": "full10_manifest_v1_new_2026-08-25",
+    "global_seed": 20260825,
+    "task_id": 0,
+    "trial_id": 6,
+    "magnitude": 0.05,
+    "duration": 5,
+    "feasible": true,
+    "feasibility_window_start": 0,
+    "feasibility_window_end": 212,
+    "adapter_window_used": [
+      0,
+      221
+    ],
+    "oft_window_used": [
+      0,
+      212
+    ],
+    "trial_seed": 20266825,
+    "chosen_trigger_step": 178,
+    "perturbed_body": "tomato_sauce_1_main",
+    "direction_angle_rad": 1.5499614247069011,
+    "delta_xy": [
+      0.0010416697369675053,
+      0.0499891480639457
+    ],
+    "event": {
+      "group": "source",
+      "body_name": "tomato_sauce_1_main",
+      "trigger_step": 178,
+      "delta_xy": [
+        0.0010416697369675053,
+        0.0499891480639457
+      ],
+      "magnitude": 0.05,
+      "duration": 5
+    }
+  },
+  "7": {
+    "generator_version": "full10_manifest_v1_new_2026-08-25",
+    "global_seed": 20260825,
+    "task_id": 0,
+    "trial_id": 7,
+    "magnitude": 0.05,
+    "duration": 5,
+    "feasible": true,
+    "feasibility_window_start": 0,
+    "feasibility_window_end": 180,
+    "adapter_window_used": [
+      0,
+      182
+    ],
+    "oft_window_used": [
+      0,
+      180
+    ],
+    "trial_seed": 20267825,
+    "chosen_trigger_step": 47,
+    "perturbed_body": "tomato_sauce_1_main",
+    "direction_angle_rad": 3.9416596297112765,
+    "delta_xy": [
+      -0.03483293310279333,
+      -0.035870137600186654
+    ],
+    "event": {
+      "group": "source",
+      "body_name": "tomato_sauce_1_main",
+      "trigger_step": 47,
+      "delta_xy": [
+        -0.03483293310279333,
+        -0.035870137600186654
+      ],
+      "magnitude": 0.05,
+      "duration": 5
+    }
+  },
+  "8": {
+    "generator_version": "full10_manifest_v1_new_2026-08-25",
+    "global_seed": 20260825,
+    "task_id": 0,
+    "trial_id": 8,
+    "magnitude": 0.05,
+    "duration": 5,
+    "feasible": true,
+    "feasibility_window_start": 0,
+    "feasibility_window_end": 179,
+    "adapter_window_used": [
+      0,
+      179
+    ],
+    "oft_window_used": [
+      0,
+      519
+    ],
+    "trial_seed": 20268825,
+    "chosen_trigger_step": 30,
+    "perturbed_body": "tomato_sauce_1_main",
+    "direction_angle_rad": 1.6124376448541589,
+    "delta_xy": [
+      -0.0020814642383025486,
+      0.04995665627946558
+    ],
+    "event": {
+      "group": "source",
+      "body_name": "tomato_sauce_1_main",
+      "trigger_step": 30,
+      "delta_xy": [
+        -0.0020814642383025486,
+        0.04995665627946558
+      ],
+      "magnitude": 0.05,
+      "duration": 5
+    }
+  },
+  "9": {
+    "generator_version": "full10_manifest_v1_new_2026-08-25",
+    "global_seed": 20260825,
+    "task_id": 0,
+    "trial_id": 9,
+    "magnitude": 0.05,
+    "duration": 5,
+    "feasible": true,
+    "feasibility_window_start": 0,
+    "feasibility_window_end": 179,
+    "adapter_window_used": [
+      0,
+      179
+    ],
+    "oft_window_used": [
+      0,
+      180
+    ],
+    "trial_seed": 20269825,
+    "chosen_trigger_step": 36,
+    "perturbed_body": "tomato_sauce_1_main",
+    "direction_angle_rad": 3.1013564809826177,
+    "delta_xy": [
+      -0.04995953172046549,
+      0.002011265838173401
+    ],
+    "event": {
+      "group": "source",
+      "body_name": "tomato_sauce_1_main",
+      "trigger_step": 36,
+      "delta_xy": [
+        -0.04995953172046549,
+        0.002011265838173401
+      ],
+      "magnitude": 0.05,
+      "duration": 5
+    }
+  },
+  "10": {
+    "generator_version": "full10_manifest_v1_new_2026-08-25",
+    "global_seed": 20260825,
+    "task_id": 0,
+    "trial_id": 10,
+    "magnitude": 0.05,
+    "duration": 5,
+    "feasible": true,
+    "feasibility_window_start": 0,
+    "feasibility_window_end": 194,
+    "adapter_window_used": [
+      0,
+      194
+    ],
+    "oft_window_used": [
+      0,
+      202
+    ],
+    "trial_seed": 20270825,
+    "chosen_trigger_step": 117,
+    "perturbed_body": "tomato_sauce_1_main",
+    "direction_angle_rad": 1.8337305532812302,
+    "delta_xy": [
+      -0.012995752410133907,
+      0.04828157432493786
+    ],
+    "event": {
+      "group": "source",
+      "body_name": "tomato_sauce_1_main",
+      "trigger_step": 117,
+      "delta_xy": [
+        -0.012995752410133907,
+        0.04828157432493786
+      ],
+      "magnitude": 0.05,
+      "duration": 5
+    }
+  },
+  "11": {
+    "generator_version": "full10_manifest_v1_new_2026-08-25",
+    "global_seed": 20260825,
+    "task_id": 0,
+    "trial_id": 11,
+    "magnitude": 0.05,
+    "duration": 5,
+    "feasible": true,
+    "feasibility_window_start": 0,
+    "feasibility_window_end": 183,
+    "adapter_window_used": [
+      0,
+      183
+    ],
+    "oft_window_used": [
+      0,
+      212
+    ],
+    "trial_seed": 20271825,
+    "chosen_trigger_step": 15,
+    "perturbed_body": "tomato_sauce_1_main",
+    "direction_angle_rad": 0.3866191378002996,
+    "delta_xy": [
+      0.04630945680469284,
+      0.018852962909163332
+    ],
+    "event": {
+      "group": "source",
+      "body_name": "tomato_sauce_1_main",
+      "trigger_step": 15,
+      "delta_xy": [
+        0.04630945680469284,
+        0.018852962909163332
+      ],
+      "magnitude": 0.05,
+      "duration": 5
+    }
+  }
+}

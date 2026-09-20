@@ -1,0 +1,440 @@
+{
+  "0": {
+    "generator_version": "full10_manifest_v1_new_2026-08-25",
+    "global_seed": 20260825,
+    "task_id": 8,
+    "trial_id": 0,
+    "magnitude": 0.05,
+    "duration": 5,
+    "feasible": false,
+    "reason": "intersected_window_too_narrow_for_duration",
+    "feasibility_window_start": 248,
+    "feasibility_window_end": 101,
+    "adapter_window_used": [
+      248,
+      519
+    ],
+    "oft_window_used": [
+      0,
+      101
+    ]
+  },
+  "1": {
+    "generator_version": "full10_manifest_v1_new_2026-08-25",
+    "global_seed": 20260825,
+    "task_id": 8,
+    "trial_id": 1,
+    "magnitude": 0.05,
+    "duration": 5,
+    "feasible": true,
+    "feasibility_window_start": 0,
+    "feasibility_window_end": 101,
+    "adapter_window_used": [
+      0,
+      106
+    ],
+    "oft_window_used": [
+      0,
+      101
+    ],
+    "trial_seed": 21061825,
+    "chosen_trigger_step": 3,
+    "perturbed_body": "moka_pot_2_main",
+    "direction_angle_rad": 5.8580783284667595,
+    "delta_xy": [
+      0.04554973090972244,
+      -0.02062091205674173
+    ],
+    "event": {
+      "group": "source",
+      "body_name": "moka_pot_2_main",
+      "trigger_step": 3,
+      "delta_xy": [
+        0.04554973090972244,
+        -0.02062091205674173
+      ],
+      "magnitude": 0.05,
+      "duration": 5
+    }
+  },
+  "2": {
+    "generator_version": "full10_manifest_v1_new_2026-08-25",
+    "global_seed": 20260825,
+    "task_id": 8,
+    "trial_id": 2,
+    "magnitude": 0.05,
+    "duration": 5,
+    "feasible": true,
+    "feasibility_window_start": 0,
+    "feasibility_window_end": 92,
+    "adapter_window_used": [
+      0,
+      92
+    ],
+    "oft_window_used": [
+      0,
+      108
+    ],
+    "trial_seed": 21062825,
+    "chosen_trigger_step": 15,
+    "perturbed_body": "moka_pot_2_main",
+    "direction_angle_rad": 5.606183636490727,
+    "delta_xy": [
+      0.0389727274651093,
+      -0.03132293910108557
+    ],
+    "event": {
+      "group": "source",
+      "body_name": "moka_pot_2_main",
+      "trigger_step": 15,
+      "delta_xy": [
+        0.0389727274651093,
+        -0.03132293910108557
+      ],
+      "magnitude": 0.05,
+      "duration": 5
+    }
+  },
+  "3": {
+    "generator_version": "full10_manifest_v1_new_2026-08-25",
+    "global_seed": 20260825,
+    "task_id": 8,
+    "trial_id": 3,
+    "magnitude": 0.05,
+    "duration": 5,
+    "feasible": true,
+    "feasibility_window_start": 0,
+    "feasibility_window_end": 103,
+    "adapter_window_used": [
+      0,
+      103
+    ],
+    "oft_window_used": [
+      0,
+      109
+    ],
+    "trial_seed": 21063825,
+    "chosen_trigger_step": 81,
+    "perturbed_body": "moka_pot_2_main",
+    "direction_angle_rad": 3.0395008003054036,
+    "delta_xy": [
+      -0.0497396575788026,
+      0.005095729971600283
+    ],
+    "event": {
+      "group": "source",
+      "body_name": "moka_pot_2_main",
+      "trigger_step": 81,
+      "delta_xy": [
+        -0.0497396575788026,
+        0.005095729971600283
+      ],
+      "magnitude": 0.05,
+      "duration": 5
+    }
+  },
+  "4": {
+    "generator_version": "full10_manifest_v1_new_2026-08-25",
+    "global_seed": 20260825,
+    "task_id": 8,
+    "trial_id": 4,
+    "magnitude": 0.05,
+    "duration": 5,
+    "feasible": true,
+    "feasibility_window_start": 0,
+    "feasibility_window_end": 97,
+    "adapter_window_used": [
+      0,
+      111
+    ],
+    "oft_window_used": [
+      0,
+      97
+    ],
+    "trial_seed": 21064825,
+    "chosen_trigger_step": 5,
+    "perturbed_body": "moka_pot_2_main",
+    "direction_angle_rad": 1.8754804352340848,
+    "delta_xy": [
+      -0.014999592401445064,
+      0.04769708825274885
+    ],
+    "event": {
+      "group": "source",
+      "body_name": "moka_pot_2_main",
+      "trigger_step": 5,
+      "delta_xy": [
+        -0.014999592401445064,
+        0.04769708825274885
+      ],
+      "magnitude": 0.05,
+      "duration": 5
+    }
+  },
+  "5": {
+    "generator_version": "full10_manifest_v1_new_2026-08-25",
+    "global_seed": 20260825,
+    "task_id": 8,
+    "trial_id": 5,
+    "magnitude": 0.05,
+    "duration": 5,
+    "feasible": true,
+    "feasibility_window_start": 0,
+    "feasibility_window_end": 98,
+    "adapter_window_used": [
+      0,
+      106
+    ],
+    "oft_window_used": [
+      0,
+      98
+    ],
+    "trial_seed": 21065825,
+    "chosen_trigger_step": 50,
+    "perturbed_body": "moka_pot_2_main",
+    "direction_angle_rad": 1.2037991132825476,
+    "delta_xy": [
+      0.017940711296207387,
+      0.046670449731989264
+    ],
+    "event": {
+      "group": "source",
+      "body_name": "moka_pot_2_main",
+      "trigger_step": 50,
+      "delta_xy": [
+        0.017940711296207387,
+        0.046670449731989264
+      ],
+      "magnitude": 0.05,
+      "duration": 5
+    }
+  },
+  "6": {
+    "generator_version": "full10_manifest_v1_new_2026-08-25",
+    "global_seed": 20260825,
+    "task_id": 8,
+    "trial_id": 6,
+    "magnitude": 0.05,
+    "duration": 5,
+    "feasible": true,
+    "feasibility_window_start": 0,
+    "feasibility_window_end": 140,
+    "adapter_window_used": [
+      0,
+      140
+    ],
+    "oft_window_used": [
+      0,
+      444
+    ],
+    "trial_seed": 21066825,
+    "chosen_trigger_step": 133,
+    "perturbed_body": "moka_pot_2_main",
+    "direction_angle_rad": 2.440201112358327,
+    "delta_xy": [
+      -0.038197249579242865,
+      0.032264068630305
+    ],
+    "event": {
+      "group": "source",
+      "body_name": "moka_pot_2_main",
+      "trigger_step": 133,
+      "delta_xy": [
+        -0.038197249579242865,
+        0.032264068630305
+      ],
+      "magnitude": 0.05,
+      "duration": 5
+    }
+  },
+  "7": {
+    "generator_version": "full10_manifest_v1_new_2026-08-25",
+    "global_seed": 20260825,
+    "task_id": 8,
+    "trial_id": 7,
+    "magnitude": 0.05,
+    "duration": 5,
+    "feasible": true,
+    "feasibility_window_start": 0,
+    "feasibility_window_end": 103,
+    "adapter_window_used": [
+      0,
+      103
+    ],
+    "oft_window_used": [
+      0,
+      105
+    ],
+    "trial_seed": 21067825,
+    "chosen_trigger_step": 25,
+    "perturbed_body": "moka_pot_2_main",
+    "direction_angle_rad": 0.09710484732394102,
+    "delta_xy": [
+      0.04976445139216682,
+      0.004847615665114769
+    ],
+    "event": {
+      "group": "source",
+      "body_name": "moka_pot_2_main",
+      "trigger_step": 25,
+      "delta_xy": [
+        0.04976445139216682,
+        0.004847615665114769
+      ],
+      "magnitude": 0.05,
+      "duration": 5
+    }
+  },
+  "8": {
+    "generator_version": "full10_manifest_v1_new_2026-08-25",
+    "global_seed": 20260825,
+    "task_id": 8,
+    "trial_id": 8,
+    "magnitude": 0.05,
+    "duration": 5,
+    "feasible": true,
+    "feasibility_window_start": 0,
+    "feasibility_window_end": 112,
+    "adapter_window_used": [
+      0,
+      154
+    ],
+    "oft_window_used": [
+      0,
+      112
+    ],
+    "trial_seed": 21068825,
+    "chosen_trigger_step": 91,
+    "perturbed_body": "moka_pot_2_main",
+    "direction_angle_rad": 5.724775645014923,
+    "delta_xy": [
+      0.042404940236886485,
+      -0.02649190524492502
+    ],
+    "event": {
+      "group": "source",
+      "body_name": "moka_pot_2_main",
+      "trigger_step": 91,
+      "delta_xy": [
+        0.042404940236886485,
+        -0.02649190524492502
+      ],
+      "magnitude": 0.05,
+      "duration": 5
+    }
+  },
+  "9": {
+    "generator_version": "full10_manifest_v1_new_2026-08-25",
+    "global_seed": 20260825,
+    "task_id": 8,
+    "trial_id": 9,
+    "magnitude": 0.05,
+    "duration": 5,
+    "feasible": true,
+    "feasibility_window_start": 0,
+    "feasibility_window_end": 107,
+    "adapter_window_used": [
+      0,
+      107
+    ],
+    "oft_window_used": [
+      0,
+      110
+    ],
+    "trial_seed": 21069825,
+    "chosen_trigger_step": 74,
+    "perturbed_body": "moka_pot_2_main",
+    "direction_angle_rad": 1.5902675939692872,
+    "delta_xy": [
+      -0.0009735018419998356,
+      0.04999052204331961
+    ],
+    "event": {
+      "group": "source",
+      "body_name": "moka_pot_2_main",
+      "trigger_step": 74,
+      "delta_xy": [
+        -0.0009735018419998356,
+        0.04999052204331961
+      ],
+      "magnitude": 0.05,
+      "duration": 5
+    }
+  },
+  "10": {
+    "generator_version": "full10_manifest_v1_new_2026-08-25",
+    "global_seed": 20260825,
+    "task_id": 8,
+    "trial_id": 10,
+    "magnitude": 0.05,
+    "duration": 5,
+    "feasible": true,
+    "feasibility_window_start": 0,
+    "feasibility_window_end": 87,
+    "adapter_window_used": [
+      0,
+      93
+    ],
+    "oft_window_used": [
+      0,
+      87
+    ],
+    "trial_seed": 21070825,
+    "chosen_trigger_step": 38,
+    "perturbed_body": "moka_pot_2_main",
+    "direction_angle_rad": 1.62199446462199,
+    "delta_xy": [
+      -0.0025587886788886686,
+      0.04993448308030024
+    ],
+    "event": {
+      "group": "source",
+      "body_name": "moka_pot_2_main",
+      "trigger_step": 38,
+      "delta_xy": [
+        -0.0025587886788886686,
+        0.04993448308030024
+      ],
+      "magnitude": 0.05,
+      "duration": 5
+    }
+  },
+  "11": {
+    "generator_version": "full10_manifest_v1_new_2026-08-25",
+    "global_seed": 20260825,
+    "task_id": 8,
+    "trial_id": 11,
+    "magnitude": 0.05,
+    "duration": 5,
+    "feasible": true,
+    "feasibility_window_start": 0,
+    "feasibility_window_end": 84,
+    "adapter_window_used": [
+      0,
+      84
+    ],
+    "oft_window_used": [
+      0,
+      90
+    ],
+    "trial_seed": 21071825,
+    "chosen_trigger_step": 16,
+    "perturbed_body": "moka_pot_2_main",
+    "direction_angle_rad": 3.612009543912037,
+    "delta_xy": [
+      -0.04456897034075798,
+      -0.022662896610200475
+    ],
+    "event": {
+      "group": "source",
+      "body_name": "moka_pot_2_main",
+      "trigger_step": 16,
+      "delta_xy": [
+        -0.04456897034075798,
+        -0.022662896610200475
+      ],
+      "magnitude": 0.05,
+      "duration": 5
+    }
+  }
+}

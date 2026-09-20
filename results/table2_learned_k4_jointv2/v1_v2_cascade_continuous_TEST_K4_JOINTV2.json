@@ -1,0 +1,114 @@
+{
+  "trigger": "v1_v2_cascade_continuous",
+  "matched": 238,
+  "expected": 238,
+  "missing": {},
+  "integrity": [],
+  "notes": [
+    "perturbation never_reached (known, non-blocking -- matches the ~0.8% base rate already present in fit/calibration/DEV, see comment above): 2/118 perturbed cells (1.7%) -- [(2, 7, 'perturbed'), (8, 6, 'perturbed')]"
+  ],
+  "provenance": {
+    "driver_sha256": [
+      "9b663ba0873750e59bf2834491432b96091d26d66e704af2317e8d0955cd31c1"
+    ],
+    "checkpoint_sha256": [
+      "4cbcc007ee99c908a4d3062a14c4334bff2ffc5f5f85f3bc57e933626a3b1e0e"
+    ]
+  },
+  "rows": {
+    "adapter": {
+      "n": 238,
+      "successes": 193,
+      "overall_sr": 0.8109243697478992,
+      "clean_sr": 0.925,
+      "perturbed_sr": 0.6949152542372882,
+      "rescued": 0,
+      "rescue_n": 45,
+      "retained": 193,
+      "retain_n": 193,
+      "switches": 0,
+      "invocation_rate": 0.0,
+      "latency_median_ms": null,
+      "latency_p95_ms": null,
+      "no_stall_rate": null
+    },
+    "full_oft": {
+      "n": 238,
+      "successes": 198,
+      "overall_sr": 0.8319327731092437,
+      "clean_sr": 0.925,
+      "perturbed_sr": 0.7372881355932204,
+      "rescued": 26,
+      "rescue_n": 45,
+      "retained": 172,
+      "retain_n": 193,
+      "switches": 238,
+      "invocation_rate": 1.0,
+      "latency_median_ms": null,
+      "latency_p95_ms": null,
+      "no_stall_rate": null
+    },
+    "sync": {
+      "n": 238,
+      "successes": 201,
+      "overall_sr": 0.8445378151260504,
+      "clean_sr": 0.925,
+      "perturbed_sr": 0.7627118644067796,
+      "rescued": 16,
+      "rescue_n": 45,
+      "retained": 185,
+      "retain_n": 193,
+      "switches": 109,
+      "invocation_rate": 0.4579831932773109,
+      "latency_median_ms": 226.52013000333682,
+      "latency_p95_ms": 363.75990560336504,
+      "no_stall_rate": 0.0
+    },
+    "naive": {
+      "n": 238,
+      "successes": 198,
+      "overall_sr": 0.8319327731092437,
+      "clean_sr": 0.925,
+      "perturbed_sr": 0.7372881355932204,
+      "rescued": 16,
+      "rescue_n": 45,
+      "retained": 182,
+      "retain_n": 193,
+      "switches": 109,
+      "invocation_rate": 0.4579831932773109,
+      "latency_median_ms": 0.12902700109407306,
+      "latency_p95_ms": 200.07673139916733,
+      "no_stall_rate": 0.8165137614678899
+    },
+    "ours": {
+      "n": 238,
+      "successes": 202,
+      "overall_sr": 0.8487394957983193,
+      "clean_sr": 0.925,
+      "perturbed_sr": 0.7711864406779662,
+      "rescued": 17,
+      "rescue_n": 45,
+      "retained": 185,
+      "retain_n": 193,
+      "switches": 109,
+      "invocation_rate": 0.4579831932773109,
+      "latency_median_ms": 0.12746600259561092,
+      "latency_p95_ms": 224.47517420805525,
+      "no_stall_rate": 0.7614678899082569
+    }
+  },
+  "comparisons": {
+    "ours_vs_sync": {
+      "ours_wins": 5,
+      "other_wins": 4,
+      "ties": 229,
+      "mcnemar_p": 1.0
+    },
+    "ours_vs_naive": {
+      "ours_wins": 5,
+      "other_wins": 1,
+      "ties": 232,
+      "mcnemar_p": 0.21875
+    }
+  }
+}

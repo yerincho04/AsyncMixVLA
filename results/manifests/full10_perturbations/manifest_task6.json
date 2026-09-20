@@ -1,0 +1,458 @@
+{
+  "0": {
+    "generator_version": "full10_manifest_v1_new_2026-08-25",
+    "global_seed": 20260825,
+    "task_id": 6,
+    "trial_id": 0,
+    "magnitude": 0.05,
+    "duration": 5,
+    "feasible": true,
+    "feasibility_window_start": 0,
+    "feasibility_window_end": 161,
+    "adapter_window_used": [
+      0,
+      169
+    ],
+    "oft_window_used": [
+      0,
+      161
+    ],
+    "trial_seed": 20860825,
+    "chosen_trigger_step": 61,
+    "perturbed_body": "chocolate_pudding_1_main",
+    "direction_angle_rad": 0.2344262344674355,
+    "delta_xy": [
+      0.04863238892628473,
+      0.011614247600364766
+    ],
+    "event": {
+      "group": "source",
+      "body_name": "chocolate_pudding_1_main",
+      "trigger_step": 61,
+      "delta_xy": [
+        0.04863238892628473,
+        0.011614247600364766
+      ],
+      "magnitude": 0.05,
+      "duration": 5
+    }
+  },
+  "1": {
+    "generator_version": "full10_manifest_v1_new_2026-08-25",
+    "global_seed": 20260825,
+    "task_id": 6,
+    "trial_id": 1,
+    "magnitude": 0.05,
+    "duration": 5,
+    "feasible": true,
+    "feasibility_window_start": 0,
+    "feasibility_window_end": 160,
+    "adapter_window_used": [
+      0,
+      179
+    ],
+    "oft_window_used": [
+      0,
+      160
+    ],
+    "trial_seed": 20861825,
+    "chosen_trigger_step": 147,
+    "perturbed_body": "chocolate_pudding_1_main",
+    "direction_angle_rad": 0.6093863071786366,
+    "delta_xy": [
+      0.040999971406190716,
+      0.028618217007555593
+    ],
+    "event": {
+      "group": "source",
+      "body_name": "chocolate_pudding_1_main",
+      "trigger_step": 147,
+      "delta_xy": [
+        0.040999971406190716,
+        0.028618217007555593
+      ],
+      "magnitude": 0.05,
+      "duration": 5
+    }
+  },
+  "2": {
+    "generator_version": "full10_manifest_v1_new_2026-08-25",
+    "global_seed": 20260825,
+    "task_id": 6,
+    "trial_id": 2,
+    "magnitude": 0.05,
+    "duration": 5,
+    "feasible": true,
+    "feasibility_window_start": 0,
+    "feasibility_window_end": 165,
+    "adapter_window_used": [
+      0,
+      165
+    ],
+    "oft_window_used": [
+      0,
+      165
+    ],
+    "trial_seed": 20862825,
+    "chosen_trigger_step": 144,
+    "perturbed_body": "chocolate_pudding_1_main",
+    "direction_angle_rad": 5.9294369502870214,
+    "delta_xy": [
+      0.046904040666365304,
+      -0.017320824725397737
+    ],
+    "event": {
+      "group": "source",
+      "body_name": "chocolate_pudding_1_main",
+      "trigger_step": 144,
+      "delta_xy": [
+        0.046904040666365304,
+        -0.017320824725397737
+      ],
+      "magnitude": 0.05,
+      "duration": 5
+    }
+  },
+  "3": {
+    "generator_version": "full10_manifest_v1_new_2026-08-25",
+    "global_seed": 20260825,
+    "task_id": 6,
+    "trial_id": 3,
+    "magnitude": 0.05,
+    "duration": 5,
+    "feasible": true,
+    "feasibility_window_start": 0,
+    "feasibility_window_end": 155,
+    "adapter_window_used": [
+      0,
+      163
+    ],
+    "oft_window_used": [
+      0,
+      155
+    ],
+    "trial_seed": 20863825,
+    "chosen_trigger_step": 127,
+    "perturbed_body": "chocolate_pudding_1_main",
+    "direction_angle_rad": 3.2441215796212433,
+    "delta_xy": [
+      -0.04973742562322891,
+      -0.005117469332958693
+    ],
+    "event": {
+      "group": "source",
+      "body_name": "chocolate_pudding_1_main",
+      "trigger_step": 127,
+      "delta_xy": [
+        -0.04973742562322891,
+        -0.005117469332958693
+      ],
+      "magnitude": 0.05,
+      "duration": 5
+    }
+  },
+  "4": {
+    "generator_version": "full10_manifest_v1_new_2026-08-25",
+    "global_seed": 20260825,
+    "task_id": 6,
+    "trial_id": 4,
+    "magnitude": 0.05,
+    "duration": 5,
+    "feasible": true,
+    "feasibility_window_start": 0,
+    "feasibility_window_end": 152,
+    "adapter_window_used": [
+      0,
+      216
+    ],
+    "oft_window_used": [
+      0,
+      152
+    ],
+    "trial_seed": 20864825,
+    "chosen_trigger_step": 100,
+    "perturbed_body": "chocolate_pudding_1_main",
+    "direction_angle_rad": 0.12406386394438995,
+    "delta_xy": [
+      0.049615697248444605,
+      0.006187292344045702
+    ],
+    "event": {
+      "group": "source",
+      "body_name": "chocolate_pudding_1_main",
+      "trigger_step": 100,
+      "delta_xy": [
+        0.049615697248444605,
+        0.006187292344045702
+      ],
+      "magnitude": 0.05,
+      "duration": 5
+    }
+  },
+  "5": {
+    "generator_version": "full10_manifest_v1_new_2026-08-25",
+    "global_seed": 20260825,
+    "task_id": 6,
+    "trial_id": 5,
+    "magnitude": 0.05,
+    "duration": 5,
+    "feasible": true,
+    "feasibility_window_start": 0,
+    "feasibility_window_end": 163,
+    "adapter_window_used": [
+      0,
+      163
+    ],
+    "oft_window_used": [
+      0,
+      163
+    ],
+    "trial_seed": 20865825,
+    "chosen_trigger_step": 18,
+    "perturbed_body": "chocolate_pudding_1_main",
+    "direction_angle_rad": 0.43724130132047834,
+    "delta_xy": [
+      0.0452961628801102,
+      0.021172095511274438
+    ],
+    "event": {
+      "group": "source",
+      "body_name": "chocolate_pudding_1_main",
+      "trigger_step": 18,
+      "delta_xy": [
+        0.0452961628801102,
+        0.021172095511274438
+      ],
+      "magnitude": 0.05,
+      "duration": 5
+    }
+  },
+  "6": {
+    "generator_version": "full10_manifest_v1_new_2026-08-25",
+    "global_seed": 20260825,
+    "task_id": 6,
+    "trial_id": 6,
+    "magnitude": 0.05,
+    "duration": 5,
+    "feasible": true,
+    "feasibility_window_start": 0,
+    "feasibility_window_end": 162,
+    "adapter_window_used": [
+      0,
+      179
+    ],
+    "oft_window_used": [
+      0,
+      162
+    ],
+    "trial_seed": 20866825,
+    "chosen_trigger_step": 34,
+    "perturbed_body": "chocolate_pudding_1_main",
+    "direction_angle_rad": 2.7361406049643486,
+    "delta_xy": [
+      -0.04594620938122339,
+      0.019721709953672374
+    ],
+    "event": {
+      "group": "source",
+      "body_name": "chocolate_pudding_1_main",
+      "trigger_step": 34,
+      "delta_xy": [
+        -0.04594620938122339,
+        0.019721709953672374
+      ],
+      "magnitude": 0.05,
+      "duration": 5
+    }
+  },
+  "7": {
+    "generator_version": "full10_manifest_v1_new_2026-08-25",
+    "global_seed": 20260825,
+    "task_id": 6,
+    "trial_id": 7,
+    "magnitude": 0.05,
+    "duration": 5,
+    "feasible": true,
+    "feasibility_window_start": 0,
+    "feasibility_window_end": 158,
+    "adapter_window_used": [
+      0,
+      158
+    ],
+    "oft_window_used": [
+      0,
+      169
+    ],
+    "trial_seed": 20867825,
+    "chosen_trigger_step": 35,
+    "perturbed_body": "chocolate_pudding_1_main",
+    "direction_angle_rad": 4.6992365168122765,
+    "delta_xy": [
+      -0.0006576042187085287,
+      -0.049995675379891975
+    ],
+    "event": {
+      "group": "source",
+      "body_name": "chocolate_pudding_1_main",
+      "trigger_step": 35,
+      "delta_xy": [
+        -0.0006576042187085287,
+        -0.049995675379891975
+      ],
+      "magnitude": 0.05,
+      "duration": 5
+    }
+  },
+  "8": {
+    "generator_version": "full10_manifest_v1_new_2026-08-25",
+    "global_seed": 20260825,
+    "task_id": 6,
+    "trial_id": 8,
+    "magnitude": 0.05,
+    "duration": 5,
+    "feasible": true,
+    "feasibility_window_start": 0,
+    "feasibility_window_end": 161,
+    "adapter_window_used": [
+      0,
+      161
+    ],
+    "oft_window_used": [
+      0,
+      166
+    ],
+    "trial_seed": 20868825,
+    "chosen_trigger_step": 92,
+    "perturbed_body": "chocolate_pudding_1_main",
+    "direction_angle_rad": 4.35111909829296,
+    "delta_xy": [
+      -0.017673121376649642,
+      -0.046772436122209944
+    ],
+    "event": {
+      "group": "source",
+      "body_name": "chocolate_pudding_1_main",
+      "trigger_step": 92,
+      "delta_xy": [
+        -0.017673121376649642,
+        -0.046772436122209944
+      ],
+      "magnitude": 0.05,
+      "duration": 5
+    }
+  },
+  "9": {
+    "generator_version": "full10_manifest_v1_new_2026-08-25",
+    "global_seed": 20260825,
+    "task_id": 6,
+    "trial_id": 9,
+    "magnitude": 0.05,
+    "duration": 5,
+    "feasible": true,
+    "feasibility_window_start": 0,
+    "feasibility_window_end": 164,
+    "adapter_window_used": [
+      0,
+      188
+    ],
+    "oft_window_used": [
+      0,
+      164
+    ],
+    "trial_seed": 20869825,
+    "chosen_trigger_step": 55,
+    "perturbed_body": "chocolate_pudding_1_main",
+    "direction_angle_rad": 6.11617810565183,
+    "delta_xy": [
+      0.04930433404844814,
+      -0.008311596960815534
+    ],
+    "event": {
+      "group": "source",
+      "body_name": "chocolate_pudding_1_main",
+      "trigger_step": 55,
+      "delta_xy": [
+        0.04930433404844814,
+        -0.008311596960815534
+      ],
+      "magnitude": 0.05,
+      "duration": 5
+    }
+  },
+  "10": {
+    "generator_version": "full10_manifest_v1_new_2026-08-25",
+    "global_seed": 20260825,
+    "task_id": 6,
+    "trial_id": 10,
+    "magnitude": 0.05,
+    "duration": 5,
+    "feasible": true,
+    "feasibility_window_start": 0,
+    "feasibility_window_end": 161,
+    "adapter_window_used": [
+      0,
+      161
+    ],
+    "oft_window_used": [
+      0,
+      180
+    ],
+    "trial_seed": 20870825,
+    "chosen_trigger_step": 82,
+    "perturbed_body": "chocolate_pudding_1_main",
+    "direction_angle_rad": 2.6416571348296887,
+    "delta_xy": [
+      -0.04388067370095492,
+      0.023968447499792794
+    ],
+    "event": {
+      "group": "source",
+      "body_name": "chocolate_pudding_1_main",
+      "trigger_step": 82,
+      "delta_xy": [
+        -0.04388067370095492,
+        0.023968447499792794
+      ],
+      "magnitude": 0.05,
+      "duration": 5
+    }
+  },
+  "11": {
+    "generator_version": "full10_manifest_v1_new_2026-08-25",
+    "global_seed": 20260825,
+    "task_id": 6,
+    "trial_id": 11,
+    "magnitude": 0.05,
+    "duration": 5,
+    "feasible": true,
+    "feasibility_window_start": 0,
+    "feasibility_window_end": 193,
+    "adapter_window_used": [
+      0,
+      193
+    ],
+    "oft_window_used": [
+      0,
+      253
+    ],
+    "trial_seed": 20871825,
+    "chosen_trigger_step": 15,
+    "perturbed_body": "chocolate_pudding_1_main",
+    "direction_angle_rad": 5.512508478542115,
+    "delta_xy": [
+      0.035871967047275154,
+      -0.034831049082093495
+    ],
+    "event": {
+      "group": "source",
+      "body_name": "chocolate_pudding_1_main",
+      "trigger_step": 15,
+      "delta_xy": [
+        0.035871967047275154,
+        -0.034831049082093495
+      ],
+      "magnitude": 0.05,
+      "duration": 5
+    }
+  }
+}

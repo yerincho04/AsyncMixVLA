@@ -1,0 +1,14 @@
+{
+  "input_contract": "observable_v1",
+  "checkpoint": "/home/yerincho04/Mixture-Of-VLA-master/openvla-oft/visual_trigger_v1/models/visual_gate.pt",
+  "threshold": 0.9229569243026733,
+  "persistence": 1,
+  "lags": [
+    1,
+    4,
+    16
+  ],
+  "operating_point": "fpr10",
+  "privileged_inputs": false,
+  "provenance": "visual_trigger_v1/train_visual_gate.py job 2260939; calibrated on trials 32-39; DEV 30/33 within 10 steps at 10.5% clean FPR"
+}

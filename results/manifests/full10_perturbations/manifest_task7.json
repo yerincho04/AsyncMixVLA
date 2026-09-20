@@ -1,0 +1,458 @@
+{
+  "0": {
+    "generator_version": "full10_manifest_v1_new_2026-08-25",
+    "global_seed": 20260825,
+    "task_id": 7,
+    "trial_id": 0,
+    "magnitude": 0.05,
+    "duration": 5,
+    "feasible": true,
+    "feasibility_window_start": 0,
+    "feasibility_window_end": 165,
+    "adapter_window_used": [
+      0,
+      177
+    ],
+    "oft_window_used": [
+      0,
+      165
+    ],
+    "trial_seed": 20960825,
+    "chosen_trigger_step": 125,
+    "perturbed_body": "cream_cheese_1_main",
+    "direction_angle_rad": 0.706572530221707,
+    "delta_xy": [
+      0.03802957788622798,
+      0.03246153424894332
+    ],
+    "event": {
+      "group": "source",
+      "body_name": "cream_cheese_1_main",
+      "trigger_step": 125,
+      "delta_xy": [
+        0.03802957788622798,
+        0.03246153424894332
+      ],
+      "magnitude": 0.05,
+      "duration": 5
+    }
+  },
+  "1": {
+    "generator_version": "full10_manifest_v1_new_2026-08-25",
+    "global_seed": 20260825,
+    "task_id": 7,
+    "trial_id": 1,
+    "magnitude": 0.05,
+    "duration": 5,
+    "feasible": true,
+    "feasibility_window_start": 0,
+    "feasibility_window_end": 179,
+    "adapter_window_used": [
+      0,
+      179
+    ],
+    "oft_window_used": [
+      0,
+      519
+    ],
+    "trial_seed": 20961825,
+    "chosen_trigger_step": 107,
+    "perturbed_body": "cream_cheese_1_main",
+    "direction_angle_rad": 1.9016916108128044,
+    "delta_xy": [
+      -0.01624449375032442,
+      0.047287592694021455
+    ],
+    "event": {
+      "group": "source",
+      "body_name": "cream_cheese_1_main",
+      "trigger_step": 107,
+      "delta_xy": [
+        -0.01624449375032442,
+        0.047287592694021455
+      ],
+      "magnitude": 0.05,
+      "duration": 5
+    }
+  },
+  "2": {
+    "generator_version": "full10_manifest_v1_new_2026-08-25",
+    "global_seed": 20260825,
+    "task_id": 7,
+    "trial_id": 2,
+    "magnitude": 0.05,
+    "duration": 5,
+    "feasible": true,
+    "feasibility_window_start": 0,
+    "feasibility_window_end": 179,
+    "adapter_window_used": [
+      0,
+      179
+    ],
+    "oft_window_used": [
+      0,
+      182
+    ],
+    "trial_seed": 20962825,
+    "chosen_trigger_step": 135,
+    "perturbed_body": "cream_cheese_1_main",
+    "direction_angle_rad": 4.378984194633399,
+    "delta_xy": [
+      -0.01636311077097684,
+      -0.04724667825251572
+    ],
+    "event": {
+      "group": "source",
+      "body_name": "cream_cheese_1_main",
+      "trigger_step": 135,
+      "delta_xy": [
+        -0.01636311077097684,
+        -0.04724667825251572
+      ],
+      "magnitude": 0.05,
+      "duration": 5
+    }
+  },
+  "3": {
+    "generator_version": "full10_manifest_v1_new_2026-08-25",
+    "global_seed": 20260825,
+    "task_id": 7,
+    "trial_id": 3,
+    "magnitude": 0.05,
+    "duration": 5,
+    "feasible": true,
+    "feasibility_window_start": 0,
+    "feasibility_window_end": 174,
+    "adapter_window_used": [
+      0,
+      174
+    ],
+    "oft_window_used": [
+      0,
+      176
+    ],
+    "trial_seed": 20963825,
+    "chosen_trigger_step": 127,
+    "perturbed_body": "cream_cheese_1_main",
+    "direction_angle_rad": 0.789510417938526,
+    "delta_xy": [
+      0.035209650375263926,
+      0.03550042986291402
+    ],
+    "event": {
+      "group": "source",
+      "body_name": "cream_cheese_1_main",
+      "trigger_step": 127,
+      "delta_xy": [
+        0.035209650375263926,
+        0.03550042986291402
+      ],
+      "magnitude": 0.05,
+      "duration": 5
+    }
+  },
+  "4": {
+    "generator_version": "full10_manifest_v1_new_2026-08-25",
+    "global_seed": 20260825,
+    "task_id": 7,
+    "trial_id": 4,
+    "magnitude": 0.05,
+    "duration": 5,
+    "feasible": true,
+    "feasibility_window_start": 0,
+    "feasibility_window_end": 178,
+    "adapter_window_used": [
+      0,
+      178
+    ],
+    "oft_window_used": [
+      0,
+      198
+    ],
+    "trial_seed": 20964825,
+    "chosen_trigger_step": 132,
+    "perturbed_body": "cream_cheese_1_main",
+    "direction_angle_rad": 4.294775852302979,
+    "delta_xy": [
+      -0.02027899336206196,
+      -0.045702980517920794
+    ],
+    "event": {
+      "group": "source",
+      "body_name": "cream_cheese_1_main",
+      "trigger_step": 132,
+      "delta_xy": [
+        -0.02027899336206196,
+        -0.045702980517920794
+      ],
+      "magnitude": 0.05,
+      "duration": 5
+    }
+  },
+  "5": {
+    "generator_version": "full10_manifest_v1_new_2026-08-25",
+    "global_seed": 20260825,
+    "task_id": 7,
+    "trial_id": 5,
+    "magnitude": 0.05,
+    "duration": 5,
+    "feasible": true,
+    "feasibility_window_start": 0,
+    "feasibility_window_end": 181,
+    "adapter_window_used": [
+      0,
+      194
+    ],
+    "oft_window_used": [
+      0,
+      181
+    ],
+    "trial_seed": 20965825,
+    "chosen_trigger_step": 18,
+    "perturbed_body": "cream_cheese_1_main",
+    "direction_angle_rad": 0.8580308797865173,
+    "delta_xy": [
+      0.03269642427087887,
+      0.03782781833384902
+    ],
+    "event": {
+      "group": "source",
+      "body_name": "cream_cheese_1_main",
+      "trigger_step": 18,
+      "delta_xy": [
+        0.03269642427087887,
+        0.03782781833384902
+      ],
+      "magnitude": 0.05,
+      "duration": 5
+    }
+  },
+  "6": {
+    "generator_version": "full10_manifest_v1_new_2026-08-25",
+    "global_seed": 20260825,
+    "task_id": 7,
+    "trial_id": 6,
+    "magnitude": 0.05,
+    "duration": 5,
+    "feasible": true,
+    "feasibility_window_start": 0,
+    "feasibility_window_end": 170,
+    "adapter_window_used": [
+      0,
+      170
+    ],
+    "oft_window_used": [
+      0,
+      179
+    ],
+    "trial_seed": 20966825,
+    "chosen_trigger_step": 54,
+    "perturbed_body": "cream_cheese_1_main",
+    "direction_angle_rad": 5.512656847189375,
+    "delta_xy": [
+      0.03587713448806178,
+      -0.034825726423515245
+    ],
+    "event": {
+      "group": "source",
+      "body_name": "cream_cheese_1_main",
+      "trigger_step": 54,
+      "delta_xy": [
+        0.03587713448806178,
+        -0.034825726423515245
+      ],
+      "magnitude": 0.05,
+      "duration": 5
+    }
+  },
+  "7": {
+    "generator_version": "full10_manifest_v1_new_2026-08-25",
+    "global_seed": 20260825,
+    "task_id": 7,
+    "trial_id": 7,
+    "magnitude": 0.05,
+    "duration": 5,
+    "feasible": true,
+    "feasibility_window_start": 0,
+    "feasibility_window_end": 152,
+    "adapter_window_used": [
+      0,
+      172
+    ],
+    "oft_window_used": [
+      0,
+      152
+    ],
+    "trial_seed": 20967825,
+    "chosen_trigger_step": 119,
+    "perturbed_body": "cream_cheese_1_main",
+    "direction_angle_rad": 0.41242303908291306,
+    "delta_xy": [
+      0.04580761427600169,
+      0.020041518763333446
+    ],
+    "event": {
+      "group": "source",
+      "body_name": "cream_cheese_1_main",
+      "trigger_step": 119,
+      "delta_xy": [
+        0.04580761427600169,
+        0.020041518763333446
+      ],
+      "magnitude": 0.05,
+      "duration": 5
+    }
+  },
+  "8": {
+    "generator_version": "full10_manifest_v1_new_2026-08-25",
+    "global_seed": 20260825,
+    "task_id": 7,
+    "trial_id": 8,
+    "magnitude": 0.05,
+    "duration": 5,
+    "feasible": true,
+    "feasibility_window_start": 0,
+    "feasibility_window_end": 181,
+    "adapter_window_used": [
+      0,
+      194
+    ],
+    "oft_window_used": [
+      0,
+      181
+    ],
+    "trial_seed": 20968825,
+    "chosen_trigger_step": 117,
+    "perturbed_body": "cream_cheese_1_main",
+    "direction_angle_rad": 4.84551138400693,
+    "delta_xy": [
+      0.006636478105509907,
+      -0.049557614534550466
+    ],
+    "event": {
+      "group": "source",
+      "body_name": "cream_cheese_1_main",
+      "trigger_step": 117,
+      "delta_xy": [
+        0.006636478105509907,
+        -0.049557614534550466
+      ],
+      "magnitude": 0.05,
+      "duration": 5
+    }
+  },
+  "9": {
+    "generator_version": "full10_manifest_v1_new_2026-08-25",
+    "global_seed": 20260825,
+    "task_id": 7,
+    "trial_id": 9,
+    "magnitude": 0.05,
+    "duration": 5,
+    "feasible": true,
+    "feasibility_window_start": 0,
+    "feasibility_window_end": 162,
+    "adapter_window_used": [
+      0,
+      183
+    ],
+    "oft_window_used": [
+      0,
+      162
+    ],
+    "trial_seed": 20969825,
+    "chosen_trigger_step": 120,
+    "perturbed_body": "cream_cheese_1_main",
+    "direction_angle_rad": 2.928878302592712,
+    "delta_xy": [
+      -0.04887307395821692,
+      0.010555692392006296
+    ],
+    "event": {
+      "group": "source",
+      "body_name": "cream_cheese_1_main",
+      "trigger_step": 120,
+      "delta_xy": [
+        -0.04887307395821692,
+        0.010555692392006296
+      ],
+      "magnitude": 0.05,
+      "duration": 5
+    }
+  },
+  "10": {
+    "generator_version": "full10_manifest_v1_new_2026-08-25",
+    "global_seed": 20260825,
+    "task_id": 7,
+    "trial_id": 10,
+    "magnitude": 0.05,
+    "duration": 5,
+    "feasible": true,
+    "feasibility_window_start": 0,
+    "feasibility_window_end": 171,
+    "adapter_window_used": [
+      0,
+      201
+    ],
+    "oft_window_used": [
+      0,
+      171
+    ],
+    "trial_seed": 20970825,
+    "chosen_trigger_step": 160,
+    "perturbed_body": "cream_cheese_1_main",
+    "direction_angle_rad": 0.679348491881213,
+    "delta_xy": [
+      0.03889911087283897,
+      0.03141431478327327
+    ],
+    "event": {
+      "group": "source",
+      "body_name": "cream_cheese_1_main",
+      "trigger_step": 160,
+      "delta_xy": [
+        0.03889911087283897,
+        0.03141431478327327
+      ],
+      "magnitude": 0.05,
+      "duration": 5
+    }
+  },
+  "11": {
+    "generator_version": "full10_manifest_v1_new_2026-08-25",
+    "global_seed": 20260825,
+    "task_id": 7,
+    "trial_id": 11,
+    "magnitude": 0.05,
+    "duration": 5,
+    "feasible": true,
+    "feasibility_window_start": 0,
+    "feasibility_window_end": 159,
+    "adapter_window_used": [
+      0,
+      166
+    ],
+    "oft_window_used": [
+      0,
+      159
+    ],
+    "trial_seed": 20971825,
+    "chosen_trigger_step": 93,
+    "perturbed_body": "cream_cheese_1_main",
+    "direction_angle_rad": 5.976286077303359,
+    "delta_xy": [
+      0.04766374534213988,
+      -0.015105210358006903
+    ],
+    "event": {
+      "group": "source",
+      "body_name": "cream_cheese_1_main",
+      "trigger_step": 93,
+      "delta_xy": [
+        0.04766374534213988,
+        -0.015105210358006903
+      ],
+      "magnitude": 0.05,
+      "duration": 5
+    }
+  }
+}

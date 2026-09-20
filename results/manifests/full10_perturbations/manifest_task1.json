@@ -1,0 +1,458 @@
+{
+  "0": {
+    "generator_version": "full10_manifest_v1_new_2026-08-25",
+    "global_seed": 20260825,
+    "task_id": 1,
+    "trial_id": 0,
+    "magnitude": 0.05,
+    "duration": 5,
+    "feasible": true,
+    "feasibility_window_start": 0,
+    "feasibility_window_end": 172,
+    "adapter_window_used": [
+      0,
+      172
+    ],
+    "oft_window_used": [
+      0,
+      174
+    ],
+    "trial_seed": 20360825,
+    "chosen_trigger_step": 84,
+    "perturbed_body": "butter_1_main",
+    "direction_angle_rad": 4.520284828539047,
+    "delta_xy": [
+      -0.009546238069677306,
+      -0.049080233686455116
+    ],
+    "event": {
+      "group": "source",
+      "body_name": "butter_1_main",
+      "trigger_step": 84,
+      "delta_xy": [
+        -0.009546238069677306,
+        -0.049080233686455116
+      ],
+      "magnitude": 0.05,
+      "duration": 5
+    }
+  },
+  "1": {
+    "generator_version": "full10_manifest_v1_new_2026-08-25",
+    "global_seed": 20260825,
+    "task_id": 1,
+    "trial_id": 1,
+    "magnitude": 0.05,
+    "duration": 5,
+    "feasible": true,
+    "feasibility_window_start": 0,
+    "feasibility_window_end": 183,
+    "adapter_window_used": [
+      0,
+      237
+    ],
+    "oft_window_used": [
+      0,
+      183
+    ],
+    "trial_seed": 20361825,
+    "chosen_trigger_step": 120,
+    "perturbed_body": "butter_1_main",
+    "direction_angle_rad": 0.5271710087205516,
+    "delta_xy": [
+      0.04321168827090008,
+      0.025154522392177442
+    ],
+    "event": {
+      "group": "source",
+      "body_name": "butter_1_main",
+      "trigger_step": 120,
+      "delta_xy": [
+        0.04321168827090008,
+        0.025154522392177442
+      ],
+      "magnitude": 0.05,
+      "duration": 5
+    }
+  },
+  "2": {
+    "generator_version": "full10_manifest_v1_new_2026-08-25",
+    "global_seed": 20260825,
+    "task_id": 1,
+    "trial_id": 2,
+    "magnitude": 0.05,
+    "duration": 5,
+    "feasible": true,
+    "feasibility_window_start": 0,
+    "feasibility_window_end": 171,
+    "adapter_window_used": [
+      0,
+      205
+    ],
+    "oft_window_used": [
+      0,
+      171
+    ],
+    "trial_seed": 20362825,
+    "chosen_trigger_step": 144,
+    "perturbed_body": "butter_1_main",
+    "direction_angle_rad": 6.265459127214153,
+    "delta_xy": [
+      0.049992144769286616,
+      -0.0008862625833744354
+    ],
+    "event": {
+      "group": "source",
+      "body_name": "butter_1_main",
+      "trigger_step": 144,
+      "delta_xy": [
+        0.049992144769286616,
+        -0.0008862625833744354
+      ],
+      "magnitude": 0.05,
+      "duration": 5
+    }
+  },
+  "3": {
+    "generator_version": "full10_manifest_v1_new_2026-08-25",
+    "global_seed": 20260825,
+    "task_id": 1,
+    "trial_id": 3,
+    "magnitude": 0.05,
+    "duration": 5,
+    "feasible": true,
+    "feasibility_window_start": 0,
+    "feasibility_window_end": 175,
+    "adapter_window_used": [
+      0,
+      181
+    ],
+    "oft_window_used": [
+      0,
+      175
+    ],
+    "trial_seed": 20363825,
+    "chosen_trigger_step": 0,
+    "perturbed_body": "butter_1_main",
+    "direction_angle_rad": 2.462278944176531,
+    "delta_xy": [
+      -0.03890020351670544,
+      0.03141296175719346
+    ],
+    "event": {
+      "group": "source",
+      "body_name": "butter_1_main",
+      "trigger_step": 0,
+      "delta_xy": [
+        -0.03890020351670544,
+        0.03141296175719346
+      ],
+      "magnitude": 0.05,
+      "duration": 5
+    }
+  },
+  "4": {
+    "generator_version": "full10_manifest_v1_new_2026-08-25",
+    "global_seed": 20260825,
+    "task_id": 1,
+    "trial_id": 4,
+    "magnitude": 0.05,
+    "duration": 5,
+    "feasible": true,
+    "feasibility_window_start": 0,
+    "feasibility_window_end": 174,
+    "adapter_window_used": [
+      0,
+      175
+    ],
+    "oft_window_used": [
+      0,
+      174
+    ],
+    "trial_seed": 20364825,
+    "chosen_trigger_step": 120,
+    "perturbed_body": "butter_1_main",
+    "direction_angle_rad": 1.0079575583516682,
+    "delta_xy": [
+      0.026679460772712146,
+      0.04228718922885883
+    ],
+    "event": {
+      "group": "source",
+      "body_name": "butter_1_main",
+      "trigger_step": 120,
+      "delta_xy": [
+        0.026679460772712146,
+        0.04228718922885883
+      ],
+      "magnitude": 0.05,
+      "duration": 5
+    }
+  },
+  "5": {
+    "generator_version": "full10_manifest_v1_new_2026-08-25",
+    "global_seed": 20260825,
+    "task_id": 1,
+    "trial_id": 5,
+    "magnitude": 0.05,
+    "duration": 5,
+    "feasible": true,
+    "feasibility_window_start": 0,
+    "feasibility_window_end": 176,
+    "adapter_window_used": [
+      0,
+      213
+    ],
+    "oft_window_used": [
+      0,
+      176
+    ],
+    "trial_seed": 20365825,
+    "chosen_trigger_step": 80,
+    "perturbed_body": "butter_1_main",
+    "direction_angle_rad": 4.909029852017119,
+    "delta_xy": [
+      0.009768802333841798,
+      -0.04903642014831759
+    ],
+    "event": {
+      "group": "source",
+      "body_name": "butter_1_main",
+      "trigger_step": 80,
+      "delta_xy": [
+        0.009768802333841798,
+        -0.04903642014831759
+      ],
+      "magnitude": 0.05,
+      "duration": 5
+    }
+  },
+  "6": {
+    "generator_version": "full10_manifest_v1_new_2026-08-25",
+    "global_seed": 20260825,
+    "task_id": 1,
+    "trial_id": 6,
+    "magnitude": 0.05,
+    "duration": 5,
+    "feasible": true,
+    "feasibility_window_start": 0,
+    "feasibility_window_end": 175,
+    "adapter_window_used": [
+      0,
+      175
+    ],
+    "oft_window_used": [
+      0,
+      178
+    ],
+    "trial_seed": 20366825,
+    "chosen_trigger_step": 18,
+    "perturbed_body": "butter_1_main",
+    "direction_angle_rad": 5.925713545233231,
+    "delta_xy": [
+      0.04683922323660608,
+      -0.017495346998313042
+    ],
+    "event": {
+      "group": "source",
+      "body_name": "butter_1_main",
+      "trigger_step": 18,
+      "delta_xy": [
+        0.04683922323660608,
+        -0.017495346998313042
+      ],
+      "magnitude": 0.05,
+      "duration": 5
+    }
+  },
+  "7": {
+    "generator_version": "full10_manifest_v1_new_2026-08-25",
+    "global_seed": 20260825,
+    "task_id": 1,
+    "trial_id": 7,
+    "magnitude": 0.05,
+    "duration": 5,
+    "feasible": true,
+    "feasibility_window_start": 0,
+    "feasibility_window_end": 165,
+    "adapter_window_used": [
+      0,
+      171
+    ],
+    "oft_window_used": [
+      0,
+      165
+    ],
+    "trial_seed": 20367825,
+    "chosen_trigger_step": 30,
+    "perturbed_body": "butter_1_main",
+    "direction_angle_rad": 0.3900073240940935,
+    "delta_xy": [
+      0.046245313764839015,
+      0.01900975946169733
+    ],
+    "event": {
+      "group": "source",
+      "body_name": "butter_1_main",
+      "trigger_step": 30,
+      "delta_xy": [
+        0.046245313764839015,
+        0.01900975946169733
+      ],
+      "magnitude": 0.05,
+      "duration": 5
+    }
+  },
+  "8": {
+    "generator_version": "full10_manifest_v1_new_2026-08-25",
+    "global_seed": 20260825,
+    "task_id": 1,
+    "trial_id": 8,
+    "magnitude": 0.05,
+    "duration": 5,
+    "feasible": true,
+    "feasibility_window_start": 0,
+    "feasibility_window_end": 172,
+    "adapter_window_used": [
+      0,
+      175
+    ],
+    "oft_window_used": [
+      0,
+      172
+    ],
+    "trial_seed": 20368825,
+    "chosen_trigger_step": 53,
+    "perturbed_body": "butter_1_main",
+    "direction_angle_rad": 1.8548747085457333,
+    "delta_xy": [
+      -0.014013644516180502,
+      0.04799601824499741
+    ],
+    "event": {
+      "group": "source",
+      "body_name": "butter_1_main",
+      "trigger_step": 53,
+      "delta_xy": [
+        -0.014013644516180502,
+        0.04799601824499741
+      ],
+      "magnitude": 0.05,
+      "duration": 5
+    }
+  },
+  "9": {
+    "generator_version": "full10_manifest_v1_new_2026-08-25",
+    "global_seed": 20260825,
+    "task_id": 1,
+    "trial_id": 9,
+    "magnitude": 0.05,
+    "duration": 5,
+    "feasible": true,
+    "feasibility_window_start": 0,
+    "feasibility_window_end": 171,
+    "adapter_window_used": [
+      0,
+      171
+    ],
+    "oft_window_used": [
+      0,
+      179
+    ],
+    "trial_seed": 20369825,
+    "chosen_trigger_step": 116,
+    "perturbed_body": "butter_1_main",
+    "direction_angle_rad": 4.444718828269815,
+    "delta_xy": [
+      -0.013224263760067299,
+      -0.04821948618560935
+    ],
+    "event": {
+      "group": "source",
+      "body_name": "butter_1_main",
+      "trigger_step": 116,
+      "delta_xy": [
+        -0.013224263760067299,
+        -0.04821948618560935
+      ],
+      "magnitude": 0.05,
+      "duration": 5
+    }
+  },
+  "10": {
+    "generator_version": "full10_manifest_v1_new_2026-08-25",
+    "global_seed": 20260825,
+    "task_id": 1,
+    "trial_id": 10,
+    "magnitude": 0.05,
+    "duration": 5,
+    "feasible": true,
+    "feasibility_window_start": 0,
+    "feasibility_window_end": 167,
+    "adapter_window_used": [
+      0,
+      167
+    ],
+    "oft_window_used": [
+      0,
+      170
+    ],
+    "trial_seed": 20370825,
+    "chosen_trigger_step": 59,
+    "perturbed_body": "butter_1_main",
+    "direction_angle_rad": 1.0541067940984736,
+    "delta_xy": [
+      0.02470022666855232,
+      0.04347296634141886
+    ],
+    "event": {
+      "group": "source",
+      "body_name": "butter_1_main",
+      "trigger_step": 59,
+      "delta_xy": [
+        0.02470022666855232,
+        0.04347296634141886
+      ],
+      "magnitude": 0.05,
+      "duration": 5
+    }
+  },
+  "11": {
+    "generator_version": "full10_manifest_v1_new_2026-08-25",
+    "global_seed": 20260825,
+    "task_id": 1,
+    "trial_id": 11,
+    "magnitude": 0.05,
+    "duration": 5,
+    "feasible": true,
+    "feasibility_window_start": 0,
+    "feasibility_window_end": 166,
+    "adapter_window_used": [
+      0,
+      167
+    ],
+    "oft_window_used": [
+      0,
+      166
+    ],
+    "trial_seed": 20371825,
+    "chosen_trigger_step": 51,
+    "perturbed_body": "butter_1_main",
+    "direction_angle_rad": 6.04562893401143,
+    "delta_xy": [
+      0.04859579653551163,
+      -0.011766416577665254
+    ],
+    "event": {
+      "group": "source",
+      "body_name": "butter_1_main",
+      "trigger_step": 51,
+      "delta_xy": [
+        0.04859579653551163,
+        -0.011766416577665254
+      ],
+      "magnitude": 0.05,
+      "duration": 5
+    }
+  }
+}

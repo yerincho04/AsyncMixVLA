@@ -1,0 +1,440 @@
+{
+  "0": {
+    "generator_version": "full10_manifest_v1_new_2026-08-25",
+    "global_seed": 20260825,
+    "task_id": 2,
+    "trial_id": 0,
+    "magnitude": 0.05,
+    "duration": 5,
+    "feasible": true,
+    "feasibility_window_start": 0,
+    "feasibility_window_end": 179,
+    "adapter_window_used": [
+      0,
+      179
+    ],
+    "oft_window_used": [
+      0,
+      181
+    ],
+    "trial_seed": 20460825,
+    "chosen_trigger_step": 32,
+    "perturbed_body": "moka_pot_1_main",
+    "direction_angle_rad": 0.18737534967636968,
+    "delta_xy": [
+      0.04912482703498865,
+      0.009314041484900563
+    ],
+    "event": {
+      "group": "source",
+      "body_name": "moka_pot_1_main",
+      "trigger_step": 32,
+      "delta_xy": [
+        0.04912482703498865,
+        0.009314041484900563
+      ],
+      "magnitude": 0.05,
+      "duration": 5
+    }
+  },
+  "1": {
+    "generator_version": "full10_manifest_v1_new_2026-08-25",
+    "global_seed": 20260825,
+    "task_id": 2,
+    "trial_id": 1,
+    "magnitude": 0.05,
+    "duration": 5,
+    "feasible": true,
+    "feasibility_window_start": 0,
+    "feasibility_window_end": 190,
+    "adapter_window_used": [
+      0,
+      202
+    ],
+    "oft_window_used": [
+      0,
+      190
+    ],
+    "trial_seed": 20461825,
+    "chosen_trigger_step": 153,
+    "perturbed_body": "moka_pot_1_main",
+    "direction_angle_rad": 6.151450147598826,
+    "delta_xy": [
+      0.049566773260836236,
+      -0.006567723236316394
+    ],
+    "event": {
+      "group": "source",
+      "body_name": "moka_pot_1_main",
+      "trigger_step": 153,
+      "delta_xy": [
+        0.049566773260836236,
+        -0.006567723236316394
+      ],
+      "magnitude": 0.05,
+      "duration": 5
+    }
+  },
+  "2": {
+    "generator_version": "full10_manifest_v1_new_2026-08-25",
+    "global_seed": 20260825,
+    "task_id": 2,
+    "trial_id": 2,
+    "magnitude": 0.05,
+    "duration": 5,
+    "feasible": true,
+    "feasibility_window_start": 0,
+    "feasibility_window_end": 168,
+    "adapter_window_used": [
+      0,
+      180
+    ],
+    "oft_window_used": [
+      0,
+      168
+    ],
+    "trial_seed": 20462825,
+    "chosen_trigger_step": 26,
+    "perturbed_body": "moka_pot_1_main",
+    "direction_angle_rad": 1.72476238275895,
+    "delta_xy": [
+      -0.007667923416210078,
+      0.049408531150836064
+    ],
+    "event": {
+      "group": "source",
+      "body_name": "moka_pot_1_main",
+      "trigger_step": 26,
+      "delta_xy": [
+        -0.007667923416210078,
+        0.049408531150836064
+      ],
+      "magnitude": 0.05,
+      "duration": 5
+    }
+  },
+  "3": {
+    "generator_version": "full10_manifest_v1_new_2026-08-25",
+    "global_seed": 20260825,
+    "task_id": 2,
+    "trial_id": 3,
+    "magnitude": 0.05,
+    "duration": 5,
+    "feasible": true,
+    "feasibility_window_start": 0,
+    "feasibility_window_end": 188,
+    "adapter_window_used": [
+      0,
+      254
+    ],
+    "oft_window_used": [
+      0,
+      188
+    ],
+    "trial_seed": 20463825,
+    "chosen_trigger_step": 80,
+    "perturbed_body": "moka_pot_1_main",
+    "direction_angle_rad": 3.0367780596927196,
+    "delta_xy": [
+      -0.04972559887720331,
+      0.005231139101904751
+    ],
+    "event": {
+      "group": "source",
+      "body_name": "moka_pot_1_main",
+      "trigger_step": 80,
+      "delta_xy": [
+        -0.04972559887720331,
+        0.005231139101904751
+      ],
+      "magnitude": 0.05,
+      "duration": 5
+    }
+  },
+  "4": {
+    "generator_version": "full10_manifest_v1_new_2026-08-25",
+    "global_seed": 20260825,
+    "task_id": 2,
+    "trial_id": 4,
+    "magnitude": 0.05,
+    "duration": 5,
+    "feasible": true,
+    "feasibility_window_start": 0,
+    "feasibility_window_end": 177,
+    "adapter_window_used": [
+      0,
+      189
+    ],
+    "oft_window_used": [
+      0,
+      177
+    ],
+    "trial_seed": 20464825,
+    "chosen_trigger_step": 142,
+    "perturbed_body": "moka_pot_1_main",
+    "direction_angle_rad": 3.106896615396104,
+    "delta_xy": [
+      -0.04996990764232606,
+      0.0017344538671880555
+    ],
+    "event": {
+      "group": "source",
+      "body_name": "moka_pot_1_main",
+      "trigger_step": 142,
+      "delta_xy": [
+        -0.04996990764232606,
+        0.0017344538671880555
+      ],
+      "magnitude": 0.05,
+      "duration": 5
+    }
+  },
+  "5": {
+    "generator_version": "full10_manifest_v1_new_2026-08-25",
+    "global_seed": 20260825,
+    "task_id": 2,
+    "trial_id": 5,
+    "magnitude": 0.05,
+    "duration": 5,
+    "feasible": false,
+    "reason": "intersected_window_too_narrow_for_duration",
+    "feasibility_window_start": 200,
+    "feasibility_window_end": 193,
+    "adapter_window_used": [
+      0,
+      193
+    ],
+    "oft_window_used": [
+      200,
+      519
+    ]
+  },
+  "6": {
+    "generator_version": "full10_manifest_v1_new_2026-08-25",
+    "global_seed": 20260825,
+    "task_id": 2,
+    "trial_id": 6,
+    "magnitude": 0.05,
+    "duration": 5,
+    "feasible": true,
+    "feasibility_window_start": 0,
+    "feasibility_window_end": 169,
+    "adapter_window_used": [
+      0,
+      169
+    ],
+    "oft_window_used": [
+      0,
+      182
+    ],
+    "trial_seed": 20466825,
+    "chosen_trigger_step": 3,
+    "perturbed_body": "moka_pot_1_main",
+    "direction_angle_rad": 5.5381700836369125,
+    "delta_xy": [
+      0.03675387905816865,
+      -0.03389915005096016
+    ],
+    "event": {
+      "group": "source",
+      "body_name": "moka_pot_1_main",
+      "trigger_step": 3,
+      "delta_xy": [
+        0.03675387905816865,
+        -0.03389915005096016
+      ],
+      "magnitude": 0.05,
+      "duration": 5
+    }
+  },
+  "7": {
+    "generator_version": "full10_manifest_v1_new_2026-08-25",
+    "global_seed": 20260825,
+    "task_id": 2,
+    "trial_id": 7,
+    "magnitude": 0.05,
+    "duration": 5,
+    "feasible": true,
+    "feasibility_window_start": 0,
+    "feasibility_window_end": 194,
+    "adapter_window_used": [
+      0,
+      194
+    ],
+    "oft_window_used": [
+      0,
+      198
+    ],
+    "trial_seed": 20467825,
+    "chosen_trigger_step": 176,
+    "perturbed_body": "moka_pot_1_main",
+    "direction_angle_rad": 3.220250407536664,
+    "delta_xy": [
+      -0.049845403676097064,
+      -0.0039288334613380264
+    ],
+    "event": {
+      "group": "source",
+      "body_name": "moka_pot_1_main",
+      "trigger_step": 176,
+      "delta_xy": [
+        -0.049845403676097064,
+        -0.0039288334613380264
+      ],
+      "magnitude": 0.05,
+      "duration": 5
+    }
+  },
+  "8": {
+    "generator_version": "full10_manifest_v1_new_2026-08-25",
+    "global_seed": 20260825,
+    "task_id": 2,
+    "trial_id": 8,
+    "magnitude": 0.05,
+    "duration": 5,
+    "feasible": true,
+    "feasibility_window_start": 0,
+    "feasibility_window_end": 194,
+    "adapter_window_used": [
+      0,
+      194
+    ],
+    "oft_window_used": [
+      0,
+      228
+    ],
+    "trial_seed": 20468825,
+    "chosen_trigger_step": 161,
+    "perturbed_body": "moka_pot_1_main",
+    "direction_angle_rad": 2.06003645238363,
+    "delta_xy": [
+      -0.023497764510118428,
+      0.04413451102059497
+    ],
+    "event": {
+      "group": "source",
+      "body_name": "moka_pot_1_main",
+      "trigger_step": 161,
+      "delta_xy": [
+        -0.023497764510118428,
+        0.04413451102059497
+      ],
+      "magnitude": 0.05,
+      "duration": 5
+    }
+  },
+  "9": {
+    "generator_version": "full10_manifest_v1_new_2026-08-25",
+    "global_seed": 20260825,
+    "task_id": 2,
+    "trial_id": 9,
+    "magnitude": 0.05,
+    "duration": 5,
+    "feasible": true,
+    "feasibility_window_start": 0,
+    "feasibility_window_end": 193,
+    "adapter_window_used": [
+      0,
+      193
+    ],
+    "oft_window_used": [
+      0,
+      193
+    ],
+    "trial_seed": 20469825,
+    "chosen_trigger_step": 71,
+    "perturbed_body": "moka_pot_1_main",
+    "direction_angle_rad": 2.1130487335977852,
+    "delta_xy": [
+      -0.02580332973482531,
+      0.042827423160819285
+    ],
+    "event": {
+      "group": "source",
+      "body_name": "moka_pot_1_main",
+      "trigger_step": 71,
+      "delta_xy": [
+        -0.02580332973482531,
+        0.042827423160819285
+      ],
+      "magnitude": 0.05,
+      "duration": 5
+    }
+  },
+  "10": {
+    "generator_version": "full10_manifest_v1_new_2026-08-25",
+    "global_seed": 20260825,
+    "task_id": 2,
+    "trial_id": 10,
+    "magnitude": 0.05,
+    "duration": 5,
+    "feasible": true,
+    "feasibility_window_start": 0,
+    "feasibility_window_end": 181,
+    "adapter_window_used": [
+      0,
+      181
+    ],
+    "oft_window_used": [
+      0,
+      187
+    ],
+    "trial_seed": 20470825,
+    "chosen_trigger_step": 159,
+    "perturbed_body": "moka_pot_1_main",
+    "direction_angle_rad": 3.4599786114883124,
+    "delta_xy": [
+      -0.04748709525465386,
+      -0.01565170228043681
+    ],
+    "event": {
+      "group": "source",
+      "body_name": "moka_pot_1_main",
+      "trigger_step": 159,
+      "delta_xy": [
+        -0.04748709525465386,
+        -0.01565170228043681
+      ],
+      "magnitude": 0.05,
+      "duration": 5
+    }
+  },
+  "11": {
+    "generator_version": "full10_manifest_v1_new_2026-08-25",
+    "global_seed": 20260825,
+    "task_id": 2,
+    "trial_id": 11,
+    "magnitude": 0.05,
+    "duration": 5,
+    "feasible": true,
+    "feasibility_window_start": 0,
+    "feasibility_window_end": 177,
+    "adapter_window_used": [
+      0,
+      177
+    ],
+    "oft_window_used": [
+      0,
+      185
+    ],
+    "trial_seed": 20471825,
+    "chosen_trigger_step": 84,
+    "perturbed_body": "moka_pot_1_main",
+    "direction_angle_rad": 1.1465968129813424,
+    "delta_xy": [
+      0.020579568789859906,
+      0.04556842490610603
+    ],
+    "event": {
+      "group": "source",
+      "body_name": "moka_pot_1_main",
+      "trigger_step": 84,
+      "delta_xy": [
+        0.020579568789859906,
+        0.04556842490610603
+      ],
+      "magnitude": 0.05,
+      "duration": 5
+    }
+  }
+}

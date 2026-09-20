@@ -1,0 +1,458 @@
+{
+  "0": {
+    "generator_version": "full10_manifest_v1_new_2026-08-25",
+    "global_seed": 20260825,
+    "task_id": 3,
+    "trial_id": 0,
+    "magnitude": 0.05,
+    "duration": 5,
+    "feasible": true,
+    "feasibility_window_start": 0,
+    "feasibility_window_end": 72,
+    "adapter_window_used": [
+      0,
+      75
+    ],
+    "oft_window_used": [
+      0,
+      72
+    ],
+    "trial_seed": 20560825,
+    "chosen_trigger_step": 13,
+    "perturbed_body": "akita_black_bowl_1_main",
+    "direction_angle_rad": 4.655214518222091,
+    "delta_xy": [
+      -0.002857165873569229,
+      -0.049918299281635305
+    ],
+    "event": {
+      "group": "source",
+      "body_name": "akita_black_bowl_1_main",
+      "trigger_step": 13,
+      "delta_xy": [
+        -0.002857165873569229,
+        -0.049918299281635305
+      ],
+      "magnitude": 0.05,
+      "duration": 5
+    }
+  },
+  "1": {
+    "generator_version": "full10_manifest_v1_new_2026-08-25",
+    "global_seed": 20260825,
+    "task_id": 3,
+    "trial_id": 1,
+    "magnitude": 0.05,
+    "duration": 5,
+    "feasible": true,
+    "feasibility_window_start": 0,
+    "feasibility_window_end": 70,
+    "adapter_window_used": [
+      0,
+      71
+    ],
+    "oft_window_used": [
+      0,
+      70
+    ],
+    "trial_seed": 20561825,
+    "chosen_trigger_step": 49,
+    "perturbed_body": "akita_black_bowl_1_main",
+    "direction_angle_rad": 4.666688795208543,
+    "delta_xy": [
+      -0.002284213965583811,
+      -0.04994779641344983
+    ],
+    "event": {
+      "group": "source",
+      "body_name": "akita_black_bowl_1_main",
+      "trigger_step": 49,
+      "delta_xy": [
+        -0.002284213965583811,
+        -0.04994779641344983
+      ],
+      "magnitude": 0.05,
+      "duration": 5
+    }
+  },
+  "2": {
+    "generator_version": "full10_manifest_v1_new_2026-08-25",
+    "global_seed": 20260825,
+    "task_id": 3,
+    "trial_id": 2,
+    "magnitude": 0.05,
+    "duration": 5,
+    "feasible": true,
+    "feasibility_window_start": 0,
+    "feasibility_window_end": 75,
+    "adapter_window_used": [
+      0,
+      75
+    ],
+    "oft_window_used": [
+      0,
+      78
+    ],
+    "trial_seed": 20562825,
+    "chosen_trigger_step": 64,
+    "perturbed_body": "akita_black_bowl_1_main",
+    "direction_angle_rad": 5.770314758137929,
+    "delta_xy": [
+      0.04356697885572799,
+      -0.0245340244025425
+    ],
+    "event": {
+      "group": "source",
+      "body_name": "akita_black_bowl_1_main",
+      "trigger_step": 64,
+      "delta_xy": [
+        0.04356697885572799,
+        -0.0245340244025425
+      ],
+      "magnitude": 0.05,
+      "duration": 5
+    }
+  },
+  "3": {
+    "generator_version": "full10_manifest_v1_new_2026-08-25",
+    "global_seed": 20260825,
+    "task_id": 3,
+    "trial_id": 3,
+    "magnitude": 0.05,
+    "duration": 5,
+    "feasible": true,
+    "feasibility_window_start": 0,
+    "feasibility_window_end": 71,
+    "adapter_window_used": [
+      0,
+      71
+    ],
+    "oft_window_used": [
+      0,
+      74
+    ],
+    "trial_seed": 20563825,
+    "chosen_trigger_step": 61,
+    "perturbed_body": "akita_black_bowl_1_main",
+    "direction_angle_rad": 1.1646769070149345,
+    "delta_xy": [
+      0.01975236873432726,
+      0.04593303745000075
+    ],
+    "event": {
+      "group": "source",
+      "body_name": "akita_black_bowl_1_main",
+      "trigger_step": 61,
+      "delta_xy": [
+        0.01975236873432726,
+        0.04593303745000075
+      ],
+      "magnitude": 0.05,
+      "duration": 5
+    }
+  },
+  "4": {
+    "generator_version": "full10_manifest_v1_new_2026-08-25",
+    "global_seed": 20260825,
+    "task_id": 3,
+    "trial_id": 4,
+    "magnitude": 0.05,
+    "duration": 5,
+    "feasible": true,
+    "feasibility_window_start": 0,
+    "feasibility_window_end": 81,
+    "adapter_window_used": [
+      0,
+      83
+    ],
+    "oft_window_used": [
+      0,
+      81
+    ],
+    "trial_seed": 20564825,
+    "chosen_trigger_step": 19,
+    "perturbed_body": "akita_black_bowl_1_main",
+    "direction_angle_rad": 0.6156162310169232,
+    "delta_xy": [
+      0.040820887605268655,
+      0.02887308669190089
+    ],
+    "event": {
+      "group": "source",
+      "body_name": "akita_black_bowl_1_main",
+      "trigger_step": 19,
+      "delta_xy": [
+        0.040820887605268655,
+        0.02887308669190089
+      ],
+      "magnitude": 0.05,
+      "duration": 5
+    }
+  },
+  "5": {
+    "generator_version": "full10_manifest_v1_new_2026-08-25",
+    "global_seed": 20260825,
+    "task_id": 3,
+    "trial_id": 5,
+    "magnitude": 0.05,
+    "duration": 5,
+    "feasible": true,
+    "feasibility_window_start": 0,
+    "feasibility_window_end": 66,
+    "adapter_window_used": [
+      0,
+      66
+    ],
+    "oft_window_used": [
+      0,
+      69
+    ],
+    "trial_seed": 20565825,
+    "chosen_trigger_step": 60,
+    "perturbed_body": "akita_black_bowl_1_main",
+    "direction_angle_rad": 4.291495262270568,
+    "delta_xy": [
+      -0.0204288167115517,
+      -0.04563620764005075
+    ],
+    "event": {
+      "group": "source",
+      "body_name": "akita_black_bowl_1_main",
+      "trigger_step": 60,
+      "delta_xy": [
+        -0.0204288167115517,
+        -0.04563620764005075
+      ],
+      "magnitude": 0.05,
+      "duration": 5
+    }
+  },
+  "6": {
+    "generator_version": "full10_manifest_v1_new_2026-08-25",
+    "global_seed": 20260825,
+    "task_id": 3,
+    "trial_id": 6,
+    "magnitude": 0.05,
+    "duration": 5,
+    "feasible": true,
+    "feasibility_window_start": 0,
+    "feasibility_window_end": 68,
+    "adapter_window_used": [
+      0,
+      68
+    ],
+    "oft_window_used": [
+      0,
+      72
+    ],
+    "trial_seed": 20566825,
+    "chosen_trigger_step": 53,
+    "perturbed_body": "akita_black_bowl_1_main",
+    "direction_angle_rad": 0.7426387582007825,
+    "delta_xy": [
+      0.03683433535223041,
+      0.033811710089249096
+    ],
+    "event": {
+      "group": "source",
+      "body_name": "akita_black_bowl_1_main",
+      "trigger_step": 53,
+      "delta_xy": [
+        0.03683433535223041,
+        0.033811710089249096
+      ],
+      "magnitude": 0.05,
+      "duration": 5
+    }
+  },
+  "7": {
+    "generator_version": "full10_manifest_v1_new_2026-08-25",
+    "global_seed": 20260825,
+    "task_id": 3,
+    "trial_id": 7,
+    "magnitude": 0.05,
+    "duration": 5,
+    "feasible": true,
+    "feasibility_window_start": 0,
+    "feasibility_window_end": 63,
+    "adapter_window_used": [
+      0,
+      63
+    ],
+    "oft_window_used": [
+      0,
+      65
+    ],
+    "trial_seed": 20567825,
+    "chosen_trigger_step": 14,
+    "perturbed_body": "akita_black_bowl_1_main",
+    "direction_angle_rad": 5.841030091435825,
+    "delta_xy": [
+      0.0451915785612556,
+      -0.021394420467539282
+    ],
+    "event": {
+      "group": "source",
+      "body_name": "akita_black_bowl_1_main",
+      "trigger_step": 14,
+      "delta_xy": [
+        0.0451915785612556,
+        -0.021394420467539282
+      ],
+      "magnitude": 0.05,
+      "duration": 5
+    }
+  },
+  "8": {
+    "generator_version": "full10_manifest_v1_new_2026-08-25",
+    "global_seed": 20260825,
+    "task_id": 3,
+    "trial_id": 8,
+    "magnitude": 0.05,
+    "duration": 5,
+    "feasible": true,
+    "feasibility_window_start": 0,
+    "feasibility_window_end": 75,
+    "adapter_window_used": [
+      0,
+      77
+    ],
+    "oft_window_used": [
+      0,
+      75
+    ],
+    "trial_seed": 20568825,
+    "chosen_trigger_step": 14,
+    "perturbed_body": "akita_black_bowl_1_main",
+    "direction_angle_rad": 3.686603837482292,
+    "delta_xy": [
+      -0.0427560746397429,
+      -0.02592138270618939
+    ],
+    "event": {
+      "group": "source",
+      "body_name": "akita_black_bowl_1_main",
+      "trigger_step": 14,
+      "delta_xy": [
+        -0.0427560746397429,
+        -0.02592138270618939
+      ],
+      "magnitude": 0.05,
+      "duration": 5
+    }
+  },
+  "9": {
+    "generator_version": "full10_manifest_v1_new_2026-08-25",
+    "global_seed": 20260825,
+    "task_id": 3,
+    "trial_id": 9,
+    "magnitude": 0.05,
+    "duration": 5,
+    "feasible": true,
+    "feasibility_window_start": 0,
+    "feasibility_window_end": 69,
+    "adapter_window_used": [
+      0,
+      69
+    ],
+    "oft_window_used": [
+      0,
+      69
+    ],
+    "trial_seed": 20569825,
+    "chosen_trigger_step": 44,
+    "perturbed_body": "akita_black_bowl_1_main",
+    "direction_angle_rad": 5.650375947790926,
+    "delta_xy": [
+      0.04031846012278947,
+      -0.029570623485598593
+    ],
+    "event": {
+      "group": "source",
+      "body_name": "akita_black_bowl_1_main",
+      "trigger_step": 44,
+      "delta_xy": [
+        0.04031846012278947,
+        -0.029570623485598593
+      ],
+      "magnitude": 0.05,
+      "duration": 5
+    }
+  },
+  "10": {
+    "generator_version": "full10_manifest_v1_new_2026-08-25",
+    "global_seed": 20260825,
+    "task_id": 3,
+    "trial_id": 10,
+    "magnitude": 0.05,
+    "duration": 5,
+    "feasible": true,
+    "feasibility_window_start": 0,
+    "feasibility_window_end": 77,
+    "adapter_window_used": [
+      0,
+      79
+    ],
+    "oft_window_used": [
+      0,
+      77
+    ],
+    "trial_seed": 20570825,
+    "chosen_trigger_step": 53,
+    "perturbed_body": "akita_black_bowl_1_main",
+    "direction_angle_rad": 3.1026707773741764,
+    "delta_xy": [
+      -0.049962131969721074,
+      0.0019456024877080225
+    ],
+    "event": {
+      "group": "source",
+      "body_name": "akita_black_bowl_1_main",
+      "trigger_step": 53,
+      "delta_xy": [
+        -0.049962131969721074,
+        0.0019456024877080225
+      ],
+      "magnitude": 0.05,
+      "duration": 5
+    }
+  },
+  "11": {
+    "generator_version": "full10_manifest_v1_new_2026-08-25",
+    "global_seed": 20260825,
+    "task_id": 3,
+    "trial_id": 11,
+    "magnitude": 0.05,
+    "duration": 5,
+    "feasible": true,
+    "feasibility_window_start": 0,
+    "feasibility_window_end": 59,
+    "adapter_window_used": [
+      0,
+      59
+    ],
+    "oft_window_used": [
+      0,
+      67
+    ],
+    "trial_seed": 20571825,
+    "chosen_trigger_step": 19,
+    "perturbed_body": "akita_black_bowl_1_main",
+    "direction_angle_rad": 0.9139114594253326,
+    "delta_xy": [
+      0.030532647525959074,
+      0.039594916783036
+    ],
+    "event": {
+      "group": "source",
+      "body_name": "akita_black_bowl_1_main",
+      "trigger_step": 19,
+      "delta_xy": [
+        0.030532647525959074,
+        0.039594916783036
+      ],
+      "magnitude": 0.05,
+      "duration": 5
+    }
+  }
+}

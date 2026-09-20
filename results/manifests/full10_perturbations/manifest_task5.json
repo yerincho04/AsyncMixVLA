@@ -1,0 +1,458 @@
+{
+  "0": {
+    "generator_version": "full10_manifest_v1_new_2026-08-25",
+    "global_seed": 20260825,
+    "task_id": 5,
+    "trial_id": 0,
+    "magnitude": 0.05,
+    "duration": 5,
+    "feasible": true,
+    "feasibility_window_start": 0,
+    "feasibility_window_end": 87,
+    "adapter_window_used": [
+      0,
+      90
+    ],
+    "oft_window_used": [
+      0,
+      87
+    ],
+    "trial_seed": 20760825,
+    "chosen_trigger_step": 41,
+    "perturbed_body": "black_book_1_main",
+    "direction_angle_rad": 3.388809039417696,
+    "delta_xy": [
+      -0.04847986720890778,
+      -0.01223529629419199
+    ],
+    "event": {
+      "group": "source",
+      "body_name": "black_book_1_main",
+      "trigger_step": 41,
+      "delta_xy": [
+        -0.04847986720890778,
+        -0.01223529629419199
+      ],
+      "magnitude": 0.05,
+      "duration": 5
+    }
+  },
+  "1": {
+    "generator_version": "full10_manifest_v1_new_2026-08-25",
+    "global_seed": 20260825,
+    "task_id": 5,
+    "trial_id": 1,
+    "magnitude": 0.05,
+    "duration": 5,
+    "feasible": true,
+    "feasibility_window_start": 0,
+    "feasibility_window_end": 89,
+    "adapter_window_used": [
+      0,
+      93
+    ],
+    "oft_window_used": [
+      0,
+      89
+    ],
+    "trial_seed": 20761825,
+    "chosen_trigger_step": 46,
+    "perturbed_body": "black_book_1_main",
+    "direction_angle_rad": 2.4201131426620663,
+    "delta_xy": [
+      -0.0375414669917826,
+      0.03302481273383542
+    ],
+    "event": {
+      "group": "source",
+      "body_name": "black_book_1_main",
+      "trigger_step": 46,
+      "delta_xy": [
+        -0.0375414669917826,
+        0.03302481273383542
+      ],
+      "magnitude": 0.05,
+      "duration": 5
+    }
+  },
+  "2": {
+    "generator_version": "full10_manifest_v1_new_2026-08-25",
+    "global_seed": 20260825,
+    "task_id": 5,
+    "trial_id": 2,
+    "magnitude": 0.05,
+    "duration": 5,
+    "feasible": true,
+    "feasibility_window_start": 0,
+    "feasibility_window_end": 83,
+    "adapter_window_used": [
+      0,
+      83
+    ],
+    "oft_window_used": [
+      0,
+      86
+    ],
+    "trial_seed": 20762825,
+    "chosen_trigger_step": 55,
+    "perturbed_body": "black_book_1_main",
+    "direction_angle_rad": 3.9262667267407503,
+    "delta_xy": [
+      -0.03538093024474464,
+      -0.03532972933687031
+    ],
+    "event": {
+      "group": "source",
+      "body_name": "black_book_1_main",
+      "trigger_step": 55,
+      "delta_xy": [
+        -0.03538093024474464,
+        -0.03532972933687031
+      ],
+      "magnitude": 0.05,
+      "duration": 5
+    }
+  },
+  "3": {
+    "generator_version": "full10_manifest_v1_new_2026-08-25",
+    "global_seed": 20260825,
+    "task_id": 5,
+    "trial_id": 3,
+    "magnitude": 0.05,
+    "duration": 5,
+    "feasible": true,
+    "feasibility_window_start": 0,
+    "feasibility_window_end": 78,
+    "adapter_window_used": [
+      0,
+      80
+    ],
+    "oft_window_used": [
+      0,
+      78
+    ],
+    "trial_seed": 20763825,
+    "chosen_trigger_step": 55,
+    "perturbed_body": "black_book_1_main",
+    "direction_angle_rad": 4.991380242157549,
+    "delta_xy": [
+      0.013769302738313888,
+      -0.04806668599040984
+    ],
+    "event": {
+      "group": "source",
+      "body_name": "black_book_1_main",
+      "trigger_step": 55,
+      "delta_xy": [
+        0.013769302738313888,
+        -0.04806668599040984
+      ],
+      "magnitude": 0.05,
+      "duration": 5
+    }
+  },
+  "4": {
+    "generator_version": "full10_manifest_v1_new_2026-08-25",
+    "global_seed": 20260825,
+    "task_id": 5,
+    "trial_id": 4,
+    "magnitude": 0.05,
+    "duration": 5,
+    "feasible": true,
+    "feasibility_window_start": 0,
+    "feasibility_window_end": 82,
+    "adapter_window_used": [
+      0,
+      82
+    ],
+    "oft_window_used": [
+      0,
+      84
+    ],
+    "trial_seed": 20764825,
+    "chosen_trigger_step": 52,
+    "perturbed_body": "black_book_1_main",
+    "direction_angle_rad": 1.2801380070100925,
+    "delta_xy": [
+      0.014329149699874795,
+      0.04790277099373875
+    ],
+    "event": {
+      "group": "source",
+      "body_name": "black_book_1_main",
+      "trigger_step": 52,
+      "delta_xy": [
+        0.014329149699874795,
+        0.04790277099373875
+      ],
+      "magnitude": 0.05,
+      "duration": 5
+    }
+  },
+  "5": {
+    "generator_version": "full10_manifest_v1_new_2026-08-25",
+    "global_seed": 20260825,
+    "task_id": 5,
+    "trial_id": 5,
+    "magnitude": 0.05,
+    "duration": 5,
+    "feasible": true,
+    "feasibility_window_start": 0,
+    "feasibility_window_end": 70,
+    "adapter_window_used": [
+      0,
+      73
+    ],
+    "oft_window_used": [
+      0,
+      70
+    ],
+    "trial_seed": 20765825,
+    "chosen_trigger_step": 7,
+    "perturbed_body": "black_book_1_main",
+    "direction_angle_rad": 5.72425972087455,
+    "delta_xy": [
+      0.0423912667804275,
+      -0.02651377945051638
+    ],
+    "event": {
+      "group": "source",
+      "body_name": "black_book_1_main",
+      "trigger_step": 7,
+      "delta_xy": [
+        0.0423912667804275,
+        -0.02651377945051638
+      ],
+      "magnitude": 0.05,
+      "duration": 5
+    }
+  },
+  "6": {
+    "generator_version": "full10_manifest_v1_new_2026-08-25",
+    "global_seed": 20260825,
+    "task_id": 5,
+    "trial_id": 6,
+    "magnitude": 0.05,
+    "duration": 5,
+    "feasible": true,
+    "feasibility_window_start": 0,
+    "feasibility_window_end": 79,
+    "adapter_window_used": [
+      0,
+      80
+    ],
+    "oft_window_used": [
+      0,
+      79
+    ],
+    "trial_seed": 20766825,
+    "chosen_trigger_step": 53,
+    "perturbed_body": "black_book_1_main",
+    "direction_angle_rad": 4.146899885710425,
+    "delta_xy": [
+      -0.026791441787087724,
+      -0.04221633151955639
+    ],
+    "event": {
+      "group": "source",
+      "body_name": "black_book_1_main",
+      "trigger_step": 53,
+      "delta_xy": [
+        -0.026791441787087724,
+        -0.04221633151955639
+      ],
+      "magnitude": 0.05,
+      "duration": 5
+    }
+  },
+  "7": {
+    "generator_version": "full10_manifest_v1_new_2026-08-25",
+    "global_seed": 20260825,
+    "task_id": 5,
+    "trial_id": 7,
+    "magnitude": 0.05,
+    "duration": 5,
+    "feasible": true,
+    "feasibility_window_start": 0,
+    "feasibility_window_end": 67,
+    "adapter_window_used": [
+      0,
+      69
+    ],
+    "oft_window_used": [
+      0,
+      67
+    ],
+    "trial_seed": 20767825,
+    "chosen_trigger_step": 43,
+    "perturbed_body": "black_book_1_main",
+    "direction_angle_rad": 6.068761893542085,
+    "delta_xy": [
+      0.04885496225094433,
+      -0.01063920408013705
+    ],
+    "event": {
+      "group": "source",
+      "body_name": "black_book_1_main",
+      "trigger_step": 43,
+      "delta_xy": [
+        0.04885496225094433,
+        -0.01063920408013705
+      ],
+      "magnitude": 0.05,
+      "duration": 5
+    }
+  },
+  "8": {
+    "generator_version": "full10_manifest_v1_new_2026-08-25",
+    "global_seed": 20260825,
+    "task_id": 5,
+    "trial_id": 8,
+    "magnitude": 0.05,
+    "duration": 5,
+    "feasible": true,
+    "feasibility_window_start": 0,
+    "feasibility_window_end": 65,
+    "adapter_window_used": [
+      0,
+      65
+    ],
+    "oft_window_used": [
+      0,
+      69
+    ],
+    "trial_seed": 20768825,
+    "chosen_trigger_step": 9,
+    "perturbed_body": "black_book_1_main",
+    "direction_angle_rad": 0.3962718553152607,
+    "delta_xy": [
+      0.04612531988139482,
+      0.01929908976711088
+    ],
+    "event": {
+      "group": "source",
+      "body_name": "black_book_1_main",
+      "trigger_step": 9,
+      "delta_xy": [
+        0.04612531988139482,
+        0.01929908976711088
+      ],
+      "magnitude": 0.05,
+      "duration": 5
+    }
+  },
+  "9": {
+    "generator_version": "full10_manifest_v1_new_2026-08-25",
+    "global_seed": 20260825,
+    "task_id": 5,
+    "trial_id": 9,
+    "magnitude": 0.05,
+    "duration": 5,
+    "feasible": true,
+    "feasibility_window_start": 0,
+    "feasibility_window_end": 81,
+    "adapter_window_used": [
+      0,
+      81
+    ],
+    "oft_window_used": [
+      0,
+      83
+    ],
+    "trial_seed": 20769825,
+    "chosen_trigger_step": 42,
+    "perturbed_body": "black_book_1_main",
+    "direction_angle_rad": 6.27807102060442,
+    "delta_xy": [
+      0.049999346103245954,
+      -0.000255713214018882
+    ],
+    "event": {
+      "group": "source",
+      "body_name": "black_book_1_main",
+      "trigger_step": 42,
+      "delta_xy": [
+        0.049999346103245954,
+        -0.000255713214018882
+      ],
+      "magnitude": 0.05,
+      "duration": 5
+    }
+  },
+  "10": {
+    "generator_version": "full10_manifest_v1_new_2026-08-25",
+    "global_seed": 20260825,
+    "task_id": 5,
+    "trial_id": 10,
+    "magnitude": 0.05,
+    "duration": 5,
+    "feasible": true,
+    "feasibility_window_start": 0,
+    "feasibility_window_end": 69,
+    "adapter_window_used": [
+      0,
+      77
+    ],
+    "oft_window_used": [
+      0,
+      69
+    ],
+    "trial_seed": 20770825,
+    "chosen_trigger_step": 10,
+    "perturbed_body": "black_book_1_main",
+    "direction_angle_rad": 1.099981057839114,
+    "delta_xy": [
+      0.022680650136869852,
+      0.04455993839054208
+    ],
+    "event": {
+      "group": "source",
+      "body_name": "black_book_1_main",
+      "trigger_step": 10,
+      "delta_xy": [
+        0.022680650136869852,
+        0.04455993839054208
+      ],
+      "magnitude": 0.05,
+      "duration": 5
+    }
+  },
+  "11": {
+    "generator_version": "full10_manifest_v1_new_2026-08-25",
+    "global_seed": 20260825,
+    "task_id": 5,
+    "trial_id": 11,
+    "magnitude": 0.05,
+    "duration": 5,
+    "feasible": true,
+    "feasibility_window_start": 0,
+    "feasibility_window_end": 83,
+    "adapter_window_used": [
+      0,
+      83
+    ],
+    "oft_window_used": [
+      0,
+      86
+    ],
+    "trial_seed": 20771825,
+    "chosen_trigger_step": 15,
+    "perturbed_body": "black_book_1_main",
+    "direction_angle_rad": 0.25086184573460124,
+    "delta_xy": [
+      0.04843494189233036,
+      0.012411946015294394
+    ],
+    "event": {
+      "group": "source",
+      "body_name": "black_book_1_main",
+      "trigger_step": 15,
+      "delta_xy": [
+        0.04843494189233036,
+        0.012411946015294394
+      ],
+      "magnitude": 0.05,
+      "duration": 5
+    }
+  }
+}

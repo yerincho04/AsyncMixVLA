@@ -1,0 +1,14 @@
+{
+  "gain_pos": 0.252,
+  "gain_ori": 0.240,
+  "gain_gripper": 0.0,
+  "fit_split": "TRAIN (trials 12-39), leakage-fixed all-10-task split",
+  "fit_tasks": [0, 2, 6],
+  "n_actions_position_orientation_fit": 3977,
+  "n_handoff_records_gripper_fit": 264,
+  "derivation": "gain_pos/gain_ori: median(achieved_delta_norm / commanded_delta_norm) per real policy action, measured by replaying TRAIN clean trajectories and comparing OSC controller's actual per-step eef displacement against controller.scale_action()'s commanded delta -- see audit_osc_controller_dynamics.py. Ratio verified constant across action magnitude (0.225-0.258 range), chunk position (0.245-0.255), and task (0.244-0.258); median direction cosine 0.996 (pos) / 0.968 (ori), confirming a near-pure scalar relationship. gain_gripper: 1-parameter least-squares fit of a convergence-toward-target-extreme rate on TRAIN handoff bridges; optimal value is numerically indistinguishable from zero (gripper does not move meaningfully toward its commanded extreme within bridge lengths of 1-7 steps) -- see evaluate_controller_aware_predictors.py.",
+  "root_cause": "OSC_POSE is an impedance (PD) controller (kp=150, kd=24.5, critically damped), not a kinematic position-setter; no interpolator is configured (interpolator_pos=interpolator_ori=None, confirmed from robosuite source), and the controller's goal is reset to current_eef_pos + commanded_delta EVERY step (no cross-step goal memory). With ~25 physics substeps (0.05s at sim dt=0.002s, policy_freq=20) per action, the PD loop only converges to a fraction of its newly-set goal before the next action moves the goal again -- roll_forward_proprio's naive additive model assumes full, instant convergence, causing a systematic ~4x magnitude overshoot.",
+  "validated_on": "DEV split, 90 handoff records across tasks 0/2/6: full-proprio-vector mean error stale=0.053, vanilla_additive_vlash=0.176, gain_corrected=0.012 (96.7% of DEV cases beat stale, vs 0% for vanilla additive). OFT first-action-L2 sensitivity check (9 DEV points): stale=0.0037, vanilla_additive=0.0345, gain_corrected=0.0029.",
+  "calibrated_on_date": "2026-09-05",
+  "not_yet_validated": "trials 0-11 (final TEST) -- never evaluated under this calibration; do not use for any TEST-trial claim without a separate, explicit TEST validation pass."
+}

@@ -1,0 +1,29 @@
+__pycache__/
+*.py[cod]
+*.egg-info/
+.pytest_cache/
+.ruff_cache/
+.venv*/
+.env
+.idea/
+.vscode/
+.DS_Store
+
+# Installed separately; see scripts/install_libero.sh.
+third_party/LIBERO/
+openvla-oft/LIBERO
+VLA-Adapter/LIBERO
+
+# External base models and generated runs.
+/models/
+/runs/
+/logs/
+*.out
+*.err
+/wandb/
+
+# Large generated training data.
+**/full_records/
+**/full_pairs/
+**/dev_traces/
+**/continuous_candidates/
